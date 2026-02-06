@@ -22,8 +22,7 @@ body {
     margin: 0 auto;
     width: 100%;
 }
-
-/* Branding */
+/* logo y descripcion */
 .brand-section {
     max-width: 450px;
 }
@@ -49,7 +48,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* Card de Login */
+/* Login de usuario */
 .login-card {
     background: white;
     padding: 3rem;
@@ -96,10 +95,9 @@ body {
 }
 
 .remember-me input[type="checkbox"] {
-    /* Personaliza el color del check en navegadores modernos */
+    /* color de chechkbox */
     accent-color: #64E0E7; 
     
-    /* Tamaño y estilo del cuadro */
     width: 14px;
     height: 14px;
     border: 1px solid #BCE7EF;
@@ -209,7 +207,6 @@ body {
     color: #A0A0A0;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .main-container {
         flex-direction: column;
