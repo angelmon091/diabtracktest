@@ -1,0 +1,140 @@
+:root {
+    --bg-color: #f4f7f8;
+    --primary-cyan: #64d8e8;
+    --text-main: #333;
+    --text-light: #9ea4a7;
+    --card-radius: 60px; /* Bordes muy curvos como la imagen */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'OpenSans', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Alinea contenido al inicio (izquierda) */
+    padding: 2rem; /* Empuja todo un poco a la derecha pero mantiene el bloque a la izquierda */
+    max-width: 1200px; /* Espacio amplio entre branding y card */
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+/* Branding */
+.branding {
+    max-width: 450px;
+    text-align: left;
+}
+
+.logo { font-size: 4rem; font-weight: 700; color: #1a1a1a; }
+.logo span { color: var(--primary-cyan); }
+.tagline { color: var(--text-light); font-size: 1.4rem; margin: 10px 0; }
+.description { color: #555; line-height: 1.4; font-size: 1.1rem; }
+
+/* Tarjeta */
+.auth-card {
+    background: white;
+    padding: 50px 40px;
+    border-radius: var(--card-radius);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    width: 420px;
+}
+
+.field-label-top, .field-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Fila de Fecha */
+.date-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.select-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+.select-wrapper label {
+    font-size: 0.7rem;
+    color: var(--text-light);
+}
+
+.select-wrapper select, .full-select, .full-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--primary-cyan);
+    border-radius: 15px;
+    background: white;
+    color: var(--text-light);
+    outline: none;
+}
+
+.input-group { margin-bottom: 18px; }
+
+/* Género */
+.gender-section { margin-bottom: 25px; }
+.radio-group { display: flex; gap: 40px; margin-top: 5px; }
+.custom-radio {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Botón y Enlace */
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-cyan);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.small-footer-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.7rem;
+}
+.small-footer-link a { color: var(--text-light); text-decoration: none; }
+
+/* Footer Inferior */
+.footer {
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+}
+.footer-links a {
+    color: var(--text-light);
+    font-size: 0.75rem;
+    margin-right: 20px;
+    text-decoration: none;
+}
+.social-box img {
+    width: 20px;
+    margin-left: 15px;
+    opacity: 0.6;
+    cursor: pointer;
+}
