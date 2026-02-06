@@ -84,15 +84,29 @@ body {
 }
 
 .forgot-pass {
-    text-align: right;
+    text-align: left;
     margin-bottom: 1.5rem;
+    padding-left: 5%;
 }
 
-.forgot-pass a {
+.remember-me {
     font-size: 0.75rem;
     color: #A0A0A0;
     text-decoration: none;
 }
+
+.remember-me input[type="checkbox"] {
+    /* Personaliza el color del check en navegadores modernos */
+    accent-color: #64E0E7; 
+    
+    /* Tamaño y estilo del cuadro */
+    width: 14px;
+    height: 14px;
+    border: 1px solid #BCE7EF;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
 
 .btn-primary {
     width: 100%;
