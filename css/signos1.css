@@ -168,7 +168,19 @@ select {
 }
 
 .timing1 img{
-position: fixed;
+display: flex;
+}
+
+.timing2 img{
+display: flex;
+}
+
+.timing3 img{
+display: flex;
+}
+
+.timing4 img{
+display: flex;
 }
 
 .timing-panel h3 {
@@ -188,12 +200,12 @@ position: fixed;
     padding: 25px 10px;
     border-radius: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #444;
+    color: #444444c0;
     cursor: pointer;
 }
 
@@ -344,12 +356,9 @@ position: fixed;
 
 /*movimiento*/
 
-/* --- ESTILOS EXTRA PARA MOVIMIENTO --- */
-
-/* Estructura general de la página Movimiento */
 .movement-layout {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr; /* Columna derecha un poco más ancha */
+    grid-template-columns: 0.8fr 1.2fr; 
     column-gap: 50px;
     margin-bottom: 40px;
     align-items: start;
@@ -362,7 +371,6 @@ position: fixed;
     color: #333;
 }
 
-/* Fila para Hora de Inicio/Fin: Label a la izquierda, Input a la derecha */
 .time-row {
     display: flex;
     align-items: center;
@@ -372,23 +380,20 @@ position: fixed;
 
 .time-row label {
     font-weight: 600;
-    width: 60px; /* Ancho fijo para que se alineen verticalmente */
+    width: 60px; 
     color: #555;
 }
 
-/* Grid para los checkboxes de Intensidad (2 columnas dentro de la izquierda) */
 .intensity-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
 }
 
-/* Bloques de actividad en la derecha */
 .activity-block {
     margin-bottom: 25px;
 }
 
-/* Ajuste para que el texto del checkbox se vea bien con negritas y small */
 .activity-label span {
     font-size: 0.95rem;
     color: #444;
@@ -401,12 +406,11 @@ position: fixed;
     margin-left: 5px;
 }
 
-/* Contenedor de iconos debajo del checkbox */
 .activity-icons {
-    margin-left: 45px; /* Sangría para alinearse con el texto, no con el checkbox */
-    font-size: 1.5rem; /* Tamaño de los iconos/emojis */
+    margin-left: 45px; 
+    font-size: 1.5rem; 
     color: #666;
-    letter-spacing: 30px; /* Espacio entre iconos */
+    letter-spacing: 30px; 
     opacity: 0.7;
 }
 
