@@ -171,8 +171,9 @@ body { font-family: 'Open Sans', sans-serif; background-color: var(--bg); min-he
     width: 250px;
     outline: none;
     margin-right: 100px;
+    margin-left: 100px;
 }
-.nav-menu { display: flex; gap: 50px; }
+.nav-menu { display: flex; gap: 50px; margin-right: 100px; }
 .nav-item {
     text-decoration: none;
     color: grey;
@@ -243,83 +244,4 @@ notification {
 
 @media (max-width: 1024px) {
     .dashboard-container { grid-template-columns: 1fr; }
-}
-/* --- NAVBAR IDÉNTICO FIGMA --- */
-.navbar {
-    background: white;
-    padding: 8px 30px;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-.navbar-content {
-    max-width: 1550px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.logo-small { font-weight: 800; font-size: 1.6rem; letter-spacing: -1px; }
-.logo-small span { color: var(--primary); }
-
-.nav-search input {
-    background: #F0F4F8;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    width: 250px;
-    outline: none;
-    margin-right: 100px;
-    margin-left: 100px;
-}
-.nav-menu { display: flex; gap: 50px; }
-.nav-item {
-    text-decoration: none;
-    color: grey;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.65rem;
-    font-weight: 150;
-}
-.nav-item i { font-size: 1.2rem; margin-bottom: 2px; }
-.nav-item.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
-
-.notification {
-    font-size: 1.2rem;
-    color: grey;
-    cursor: pointer;
-}
-
-.user-section { display: flex; align-items: center; gap: 20px; margin-left: 100px; }
-.user-card {
-    background: #F8F9FA;
-    color: #1b1b1b;
-    padding: 5px 15px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.user-text { text-align: right; }
-.user-name { font-size: 0.8rem; font-weight: bold; padding-right: 20px; }
-.user-email { font-size: 0.65rem; opacity: 0.8; }
-.user-avatar { 
-    width: 38px;           /* Tamaño ideal para que sea visible pero discreto */
-    height: 38px; 
-    border-radius: 20%;    /* El redondeado suave que se ve en Figma */
-    object-fit: cover;     /* Esto evita que la imagen se estire o se vea mal */
-    background-color: #333; /* Fondo oscuro por si la imagen no carga */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;      /* Corta cualquier parte de la imagen fuera del radio */
-}
-
-/* Si dentro tienes una etiqueta <img> */
-.user-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }

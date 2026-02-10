@@ -5,23 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DiabTrack - Nutrición</title>
     <link rel="stylesheet" href="css/signos1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">D<span>ia</span>bTrack</div>
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Resumen</a>
-            <a href="#" class="active">Nuevo</a>
-        </nav>
-        <div class="user-profile" style="display:flex; align-items:center; gap:10px;">
-            <span class="notification-icon">🔔</span>
-            <div class="user-info">
-                <strong>Angelom091</strong><br>
-                <small>UnoDos@demo.com</small>
+   <header class="navbar">
+        <div class="navbar-content">
+            <h2 class="logo-small">D<span>ia</span>bTrack</h2>
+            
+            <div class="nav-search">
+                <input type="text" placeholder="Buscar...">
             </div>
-            <div class="avatar" style="width:40px; height:40px; background:#000; border-radius:50%;"></div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Resumen</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Nuevo</span>
+                </a>
+            </nav>
+
+            <div class="user-section">
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-bell notification"></i>
+                </a>
+                <div class="user-card">
+                    <div class="user-text">
+                        <span class="user-name">Angelom091</span>
+                        <span class="user-email">UnoDos@demo.com</span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="img/medios/etc/yo.jpg" alt="yo">
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -90,11 +114,23 @@
 
         </div>
 
-        <footer class="form-actions">
-            <button class="btn-borrar">Borrar</button>
-            <button class="btn-guardar">Guardar</button>
-        </footer>
     </main>
+
+        <footer class="site-footer">
+        <div class="footer-content">
+            <div class="links">
+                <a href="https://youtube.com">Políticas de Privacidad</a>
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Desarrolladores</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://youtube.com"><i class="fa-brands fa-instagram"></i></a>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-apple"></i>
+                <a href="datapersonal.html"><i class="fa-brands fa-reddit"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
