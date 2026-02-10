@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiabTrack - Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-content">
+            <h2 class="logo-small">D<span>ia</span>bTrack</h2>
+            
+            <div class="nav-search">
+                <input type="text" placeholder="Buscar...">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Resumen</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Nuevo</span>
+                </a>
+            </nav>
+
+            <div class="user-section">
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-bell notification"></i>
+                </a>
+                <div class="user-card">
+                    <div class="user-text">
+                        <span class="user-name">Angelom091</span>
+                        <span class="user-email">UnoDos@demo.com</span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="img/medios/etc/yo.jpg" alt="yo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<main class="dashboard-wrapper">
+    <aside class="left-panel">
+        <div class="glass-card tool-section">
+            <div class="tool-header">
+                <i class="fa-solid fa-microchip"></i>
+                <span>Gestión DiabTrack</span>
+            </div>
+            
+            <div class="action-stack">
+                <a href="ia-nutrition.html" class="action-item ai-gold">
+                    <div class="action-icon"><i class="fa-solid fa-robot"></i></div>
+                    <div class="action-info">
+                        <strong>Nutrición IA</strong>
+                        <p>Planificación de comidas</p>
+                    </div>
+                </a>
+                <a href="graficos.html" class="action-item chart-blue">
+                    <div class="action-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="action-info">
+                        <strong>Gráficos</strong>
+                        <p>Análisis de tendencias</p>
+                    </div>
+                </a>
+                <a href="registro.html" class="action-item add-green">
+                    <div class="action-icon"><i class="fa-solid fa-plus"></i></div>
+                    <div class="action-info">
+                        <strong>Registrar</strong>
+                        <p>Añadir entrada diaria</p>
+                    </div>
+                </a>
+                <a href="ajustes.html" class="action-item settings-gray">
+                    <div class="action-icon"><i class="fa-solid fa-sliders"></i></div>
+                    <div class="action-info">
+                        <strong>Ajustes</strong>
+                        <p>Configurar perfil</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="glass-card gauge-module">
+            <div class="gauge-img">
+            <img src="img/medios/etc/Rectangle 35.png" alt="Glucosa" class="main-gauge-img" width="380">
+            </div>
+            <div class="gauge-status">
+            </div>
+        </div>
+    </aside>
+
+    <section class="main-content">
+        <div class="content-header">
+            <h3>Previsualización de Datos <span>Total</span></h3>
+            <div class="date-display">10 de Febrero, 2026</div>
+        </div>
+
+        <div class="vital-banner glass-card">
+            <div class="vital-info">
+                <span class="vital-label">Glucosa en Ayunas</span>
+                <div class="vital-value-group">
+                    <h2 class="huge-val">98</h2>
+                    <span class="huge-unit">mg/DL</span>
+                </div>
+                <div class="vital-trend-pill">
+                    <i class="fa-solid fa-circle-check"></i> En rango aceptable
+                </div>
+            </div>
+            <div class="vital-graph-preview">
+                <svg viewBox="0 0 400 100" class="mini-chart">
+                    <path d="M0 80 Q 50 20, 100 80 T 200 80 T 300 10 T 400 80" fill="none" stroke="#00C2E0" stroke-width="3" />
+                    <circle cx="300" cy="10" r="4" fill="#00C2E0" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="secondary-stats-grid">
+            <div class="glass-card stat-item">
+                <div class="stat-top">
+                    <i class="fa-solid fa-dna"></i>
+                    <span>A1c Estimada</span>
+                </div>
+                <h3>6.7%</h3>
+                <p>Últimos 90 días</p>
+            </div>
+            <div class="glass-card stat-item">
+                <div class="stat-top">
+                    <i class="fa-solid fa-bread-slice"></i>
+                    <span>Carbohidratos</span>
+                </div>
+                <h3>180g</h3>
+                <p>Meta: 200g</p>
+            </div>
+            <div class="glass-card stat-item">
+                <div class="stat-top">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Tiempo en Rango</span>
+                </div>
+                <div class="ring-simulation">
+                    <div class="ring-dot"></div>
+                    <span>85%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-label">Aspectos Importantes</div>
+
+        <div class="important-metrics-stack">
+            <div class="glass-card activity-row">
+                <div class="act-lead">
+                    <div class="act-icon fire"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                    <div class="act-title">
+                        <strong>Calorías</strong>
+                        <span>2500 / 800kcal</span>
+                    </div>
+                </div>
+                <div class="act-progress-container">
+                    <div class="progress-track"><div class="progress-fill calories" style="width: 75%"></div></div>
+                    <span class="progress-percent">75%</span>
+                </div>
+            </div>
+
+            <div class="glass-card activity-row">
+                <div class="act-lead">
+                    <div class="act-icon move"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="act-title">
+                        <strong>Actividad (Moving)</strong>
+                        <span>450 / 800kcal</span>
+                    </div>
+                </div>
+                <div class="act-progress-container">
+                    <div class="progress-track"><div class="progress-fill moving" style="width: 50%"></div></div>
+                    <span class="progress-percent">50%</span>
+                </div>
+            </div>
+
+            <div class="glass-card activity-row">
+                <div class="act-lead">
+                    <div class="act-icon feet"><i class="fa-solid fa-shoe-prints"></i></div>
+                    <div class="act-title">
+                        <strong>Pasos</strong>
+                        <span>6987 / 8000</span>
+                    </div>
+                </div>
+                <div class="act-progress-container">
+                    <div class="progress-track"><div class="progress-fill steps" style="width: 87%"></div></div>
+                    <span class="progress-percent">87%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="links">
+                <a href="https://youtube.com">Políticas de Privacidad</a>
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Desarrolladores</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://youtube.com"><i class="fa-brands fa-instagram"></i></a>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-apple"></i>
+                <a href="datapersonal.html"><i class="fa-brands fa-reddit"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
