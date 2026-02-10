@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiabTrack - Síntomas</title>
+    <link rel="stylesheet" href="css/signos1.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Diab<span>Track</span></div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Resumen</a>
+            <a href="#" class="active">Nuevo</a> </nav>
+        <div class="user-profile" style="display:flex; align-items:center; gap:10px;">
+            <span class="notification-icon">🔔</span>
+            <div class="user-info">
+                <strong>Angelom091</strong><br>
+                <small>UnoDos@demo.com</small>
+            </div>
+            <div class="avatar" style="width:40px; height:40px; background:#000; border-radius:50%;"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Registro de Datos</h1>
+
+        <section class="categories">
+            <div class="card">Signos Vitales</div>
+            <div class="card" style="border-color: var(--accent-blue);">Síntomas</div>
+            <div class="card">Nutrición</div>
+            <div class="card">Movimiento</div>
+        </section>
+
+        <div class="symptoms-layout">
+            
+            <div class="symptom-group">
+                <h3>Síntomas Físicos</h3>
+                <label class="checkbox-item"><input type="checkbox"> Sudoración fría</label>
+                <label class="checkbox-item"><input type="checkbox"> Temblores</label>
+                <label class="checkbox-item"><input type="checkbox"> Hambre repentina</label>
+                <label class="checkbox-item"><input type="checkbox"> Palpitaciones</label>
+                <label class="checkbox-item"><input type="checkbox"> Ansiedad</label>
+            </div>
+
+            <div class="symptom-group">
+                <h3>Síntomas Nocturnos:</h3>
+                <label class="checkbox-item"><input type="checkbox"> Pesadillas</label>
+                <label class="checkbox-item"><input type="checkbox"> Sudoración Nocturna</label>
+                <label class="checkbox-item"><input type="checkbox"> Dolor de cabeza matutino</label>
+                <label class="checkbox-item"><input type="checkbox"> Cansancio al despertar</label>
+            </div>
+
+            <div class="symptom-group">
+                <h3>Síntomas Neurológicos</h3>
+                <label class="checkbox-item"><input type="checkbox"> Confusión</label>
+                <label class="checkbox-item"><input type="checkbox"> Visión borrosa</label>
+                <label class="checkbox-item"><input type="checkbox"> Dificultad para hablar</label>
+                <label class="checkbox-item"><input type="checkbox"> Debilidad</label>
+                <label class="checkbox-item"><input type="checkbox"> Mareo</label>
+            </div>
+
+            <div class="symptom-group">
+                <h3>Síntomas atípicos:</h3>
+                <label class="checkbox-item"><input type="checkbox"> Cambios de Humor</label>
+                <label class="checkbox-item"><input type="checkbox"> Náuseas</label>
+                <label class="checkbox-item"><input type="checkbox"> Hormigueo en labios y/o lengua</label>
+            </div>
+
+        </div>
+
+        <footer class="form-actions">
+            <button class="btn-borrar">Borrar</button>
+            <button class="btn-guardar">Guardar</button>
+        </footer>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiabTrack - Movimiento</title>
+    <link rel="stylesheet" href="css/signos1.css">
+    </head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Diab<span>Track</span></div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Resumen</a>
+            <a href="#" class="active">Nuevo</a>
+        </nav>
+        <div class="user-profile" style="display:flex; align-items:center; gap:10px;">
+            <span class="notification-icon">🔔</span>
+            <div class="user-info">
+                <strong>Angelom091</strong><br>
+                <small>UnoDos@demo.com</small>
+            </div>
+            <div class="avatar" style="width:40px; height:40px; background:#000; border-radius:50%;"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Registro de Datos</h1>
+
+        <section class="categories">
+            <div class="card">Signos Vitales</div>
+            <div class="card">Síntomas</div>
+            <div class="card">Nutrición</div>
+            <div class="card" style="border-color: var(--accent-blue);">Movimiento</div>
+        </section>
+
+        <div class="movement-layout">
+            
+            <div class="col-left">
+                
+                <h3 class="section-title">Duración de Actividad: 0 min</h3>
+                
+                <div class="time-row">
+                    <label>Inicio:</label>
+                    <input type="text" class="pill-input" placeholder="Ingrese la hora de inicio (hh:mm)">
+                </div>
+                
+                <div class="time-row">
+                    <label>Fin:</label>
+                    <input type="text" class="pill-input" placeholder="Ingrese la hora de fin (hh:mm)">
+                </div>
+
+                <br>
+                <h3 class="section-title">Intensidad</h3>
+                
+                <div class="intensity-grid">
+                    <label class="checkbox-item"><input type="checkbox"> Muy ligera</label>
+                    <label class="checkbox-item"><input type="checkbox"> Intensa</label>
+                    <label class="checkbox-item"><input type="checkbox"> Ligera</label>
+                    <label class="checkbox-item"><input type="checkbox"> Máxima</label>
+                    <label class="checkbox-item"><input type="checkbox"> Moderada</label>
+                </div>
+
+            </div>
+
+            <div class="col-right">
+                <h3 class="section-title">¿Qué tipo de actividad realizó?</h3>
+
+                <div class="activity-block">
+                    <label class="checkbox-item activity-label">
+                        <input type="checkbox"> 
+                        <span>
+                            <strong>Aeróbico/Cardio</strong> <small>(caminar, correr, nadar, ciclismo)</small>
+                        </span>
+                    </label>
+                    <div class="activity-icons">
+                        <img src="img/medios/iconos/directions_walk.png">
+                        <img src="img/medios/iconos/Vector.png">
+                        <img src="img/medios/iconos/pool.png">
+                        <img src="img/medios/iconos/directions_bike.png">
+                    </div> 
+                </div>
+
+                <div class="activity-block">
+                    <label class="checkbox-item activity-label">
+                        <input type="checkbox"> 
+                        <span>
+                            <strong>Fuerza/Pesas</strong> <small>(máquinas, pesas libres)</small>
+                        </span>
+                    </label>
+                    <div class="activity-icons">
+                        <img src="img/medios/iconos/Group.png">
+                        <img src="img/medios/iconos/fitness_center.png">
+                    </div>
+                </div>
+
+                <div class="activity-block">
+                    <label class="checkbox-item activity-label">
+                        <input type="checkbox"> 
+                        <span>
+                            <strong>Mixto/HIIT</strong> <small>(crossfit)</small>
+                        </span>
+                    </label>
+                    <div class="activity-icons">
+                        <img src="img/medios/iconos/sports_handball.png">
+                        <img src="img/medios/iconos/sports_kabaddi.png">
+                    </div>
+                </div>
+
+                <div class="activity-block">
+                    <label class="checkbox-item activity-label">
+                        <input type="checkbox"> 
+                        <span>
+                            <strong>Flexibilidad</strong> <small>(yoga, estiramientos)</small>
+                        </span>
+                    </label>
+                    <div class="activity-icons">
+                        <img src="img/medios/iconos/yoga.png">
+                        <img src="img/medios/iconos/accessibility_new.png">
+                    </div>
+                </div>
+
+                <div class="activity-block">
+                    <label class="checkbox-item activity-label">
+                        <input type="checkbox"> 
+                        <span>
+                            <strong>Vida diaria</strong> <small>(limpieza, jardinería)</small>
+                        </span>
+                    </label>
+                    <div class="activity-icons">
+                        <img src="img/medios/iconos/cleaning_services.png">
+                        <img src="img/medios/iconos/nature_people.png">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="form-actions">
+            <button class="btn-borrar">Borrar</button>
+            <button class="btn-guardar">Guardar</button>
+        </footer>
+    </main>
+
+</body>
+</html>

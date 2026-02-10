@@ -1,0 +1,266 @@
+:root {
+    --primary-cyan: #4ed9e6; 
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #ffffff;
+    --bg-light: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 5%;
+    position: absolute; 
+    width: 100%;
+    z-index: 10;
+    background: transparent;
+}
+
+.logo {
+    font-size: 28.8px;
+    color: white;
+    
+}                                                                                 
+
+.logo span {
+    color: #00c2e0;
+
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-left: 32px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--white); 
+    font-size: 14.4px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: var(--primary-cyan);
+}
+
+
+.hero {
+    height: 90vh; 
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('https://www.accu-chek.com.mx/sites/g/files/iut326/f/article_images/rdc_blog_nota01_03.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    color: var(--white); 
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    margin-bottom: 8px;
+}
+
+.hero-content h1 span {
+    color: var(--primary-cyan);
+}
+
+.hero-content p:first-of-type {
+    font-size: 19.2px;
+    margin-bottom: 24px;
+    opacity: 0.9;
+}
+
+.hero-content p:last-of-type {
+    font-size: 17.6px;
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.btn-acceder {
+    background-color: var(--primary-cyan);
+    color: var(--white);
+    border: none;
+    padding: 12px 40px;
+    font-size: 17.6px;
+    font-weight: bold;
+    border-radius: 30px; 
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(78, 217, 230, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-acceder:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(78, 217, 230, 0.6);
+}
+
+.features {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.features h2 {
+    color: #7abcc7; 
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.description {
+    max-width: 800px;
+    margin: 0 auto 64px;
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+.target{
+   font-weight: 600;
+    font-size: 17px;       
+    color: var(--text-light);
+    margin: 0;
+    padding: 20px;
+}
+
+.features {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start;
+    max-width: 1000px; 
+    margin: 0 auto;    
+    gap: 20px;
+}
+
+.service-item1 {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;
+}
+
+.service-item1 p{
+    font-weight: 600;
+    font-size: 17px;       
+    color: var(--text-light);
+    margin: 0;
+}
+
+.service-item1 img {
+    width: 150px;  
+    height: 150px;
+    margin-bottom: 20px; 
+    opacity: 0.8; 
+    transition: opacity 0.3s;
+}
+
+.service-item2 {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;
+}
+
+.service-item2 p{
+    font-weight: 600;
+    font-size: 17px;       
+    color: var(--text-light);
+    margin: 0;
+}
+
+.service-item2 img {
+    width: 150px;  
+    height: 150px;
+    margin-bottom: 20px; 
+    opacity: 0.8; 
+    transition: opacity 0.3s;
+}
+
+.service-item3 {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;
+}
+
+.service-item3 p{
+    font-weight: 600;
+    font-size: 17px;       
+    color: var(--text-light);
+    margin: 0;
+}
+
+.service-item3 img {
+    width: 150px;  
+    height: 150px;
+    margin-bottom: 20px; 
+    opacity: 0.8; 
+    transition: opacity 0.3s;
+}
+
+
+.site-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background: white;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.8px;
+    color: #A0A0A0;
+}
+
+.footer-content .links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #A0A0A0;
+}
+
+.social-icons i {
+    margin-left: 15px;
+    font-size: 19.2px;
+    cursor: pointer;
+    color: #A0A0A0;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .brand-section {
+        margin-bottom: 48px;
+    }
+}

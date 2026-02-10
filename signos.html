@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiabTrack - Registro de Datos</title>
+    <link rel="stylesheet" href="css/signos1.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Diab<span>Track</span></div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Resumen</a>
+            <a href="#" class="active">Nuevo</a>
+        </nav>
+        <div class="user-profile">
+            <span class="notification-icon">🔔</span>
+            <div class="user-info">
+                <strong>Angelom091</strong><br>
+                <small>UnoDos@demo.com</small>
+            </div>
+            <div class="avatar"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Registro de Datos</h1>
+
+        <section class="categories">
+            <div class="card active-card">Signos Vitales</div>
+            <div class="card">Síntomas</div>
+            <div class="card">Nutrición</div>
+            <div class="card">Movimiento</div>
+        </section>
+
+        <div class="main-content">
+            <section class="form-section">
+                <div class="input-group">
+                    <label>Nivel de Glucosa: <strong>120mg/dL</strong></label>
+                    <input type="range" min="40" max="300" value="120">
+                </div>
+
+                <div class="input-group">
+                    <label>Presión Arterial:</label>
+                    <select>
+                        <option>Rango (mmHg)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Frecuencia Cardiaca:</label>
+                    <input type="range" min="40" max="200" value="75">
+                </div>
+
+                <div class="input-group">
+                    <label>Hemoglobina Glicosilada:</label>
+                    <div class="double-select">
+                        <select><option>Lapso de Tiempo</option></select>
+                        <select><option>% de HbA1c</option></select>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="timing-panel">
+                <h3>Momento de la Medición</h3>
+                <div class="timing-grid">
+                    <div class="timing1">
+                        <button class="time-btn active-btn">Ayunas</button>
+                        <img src="wb_sunny.png">
+                    </div>
+    
+                    <div class="timing2">
+                        <button class="time-btn">Antes de Comer</button>
+                        <img src="no_meals_ouline.png">
+                    </div>
+                    
+                    <div class="timing3">
+                        <button class="time-btn">Después de Comer</button>
+                        <img src="restaurant.png">
+                    </div>
+                    
+                    <div class="timing4">
+                        <button class="time-btn">Al Dormir</button>
+                        <img src="bedtime.png">
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="form-actions">
+            <button class="btn-borrar">Borrar</button>
+            <button class="btn-guardar">Guardar</button>
+        </footer>
+    </main>
+
+</body>
+</html>

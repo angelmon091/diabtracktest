@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiabTrack - Nutrición</title>
+    <link rel="stylesheet" href="css/signos1.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">D<span>ia</span>bTrack</div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Resumen</a>
+            <a href="#" class="active">Nuevo</a>
+        </nav>
+        <div class="user-profile" style="display:flex; align-items:center; gap:10px;">
+            <span class="notification-icon">🔔</span>
+            <div class="user-info">
+                <strong>Angelom091</strong><br>
+                <small>UnoDos@demo.com</small>
+            </div>
+            <div class="avatar" style="width:40px; height:40px; background:#000; border-radius:50%;"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Registro de Datos</h1>
+
+        <section class="categories">
+            <div class="card">Signos Vitales</div>
+            <div class="card">Síntomas</div>
+            <div class="card" style="border-color: var(--accent-blue);">Nutrición</div>
+            <div class="card">Movimiento</div>
+        </section>
+
+        <div class="nutrition-layout">
+            
+            <div class="col-left">
+                <div class="nutrition-group">
+                    <h3>Tipo de Comida</h3>
+                    <label class="checkbox-item"><input type="checkbox"> Desayuno</label>
+                    <label class="checkbox-item"><input type="checkbox"> Almuerzo</label>
+                    <label class="checkbox-item"><input type="checkbox"> Cena</label>
+                    <label class="checkbox-item"><input type="checkbox"> Snack/Colación</label>
+                    <label class="checkbox-item"><input type="checkbox"> Corrección <i style="color:#888; margin-left:5px; font-weight:400;">(solo insulina)</i></label>
+                </div>
+
+                <div class="nutrition-group">
+                    <h3>Hora</h3>
+                    <input type="text" class="pill-input" placeholder="Ingrese la hora de consumo (hh:mm)">
+                </div>
+
+                <div class="nutrition-group">
+                    <h3>Alimentos Ingeridos</h3>
+                    <label class="checkbox-item"><input type="checkbox"> Pan/Cereales</label>
+                    <label class="checkbox-item"><input type="checkbox"> Proteínas <i style="color:#888; margin-left:5px; font-weight:400;">(carne/huevo)</i></label>
+                    <label class="checkbox-item"><input type="checkbox"> Vegetales</label>
+                    <label class="checkbox-item"><input type="checkbox"> Fruta</label>
+                    <label class="checkbox-item"><input type="checkbox"> Lácteos</label>
+                    <label class="checkbox-item"><input type="checkbox"> Grasas/Aceites</label>
+                </div>
+            </div>
+
+            <div class="col-right">
+                <div class="nutrition-group">
+                    <h3>Carbohidratos Totales</h3>
+                    <input type="text" class="pill-input" placeholder="Ingrese la cantidad (gramos/porciones)">
+                </div>
+
+                <div class="nutrition-group">
+                    <h3>¿Tomó medicación antes de comer?</h3>
+                    <label class="checkbox-item"><input type="checkbox"> Insulina Rápida</label>
+                    <label class="checkbox-item"><input type="checkbox"> Medicamento Oral</label>
+                    <label class="checkbox-item"><input type="checkbox"> Ninguno</label>
+                    
+                    <input type="text" class="pill-input" placeholder="Ingrese la cantidad (n unidades/n pastilla)" style="margin-top:10px;">
+                    <input type="text" class="pill-input" placeholder="Ingrese la hora de consumo (hh:mm)">
+                </div>
+
+                <div class="nutrition-group">
+                    <h3>Impacto Glucémico Esperado</h3>
+                    <label class="checkbox-item"><input type="checkbox"> Bajo <i style="color:#888; margin-left:5px; font-weight:400;">(ej. ensalada con proteína)</i></label>
+                    <label class="checkbox-item"><input type="checkbox"> Medio <i style="color:#888; margin-left:5px; font-weight:400;">(ej. comida balanceada)</i></label>
+                    <label class="checkbox-item"><input type="checkbox"> Alto <i style="color:#888; margin-left:5px; font-weight:400;">(ej. pizza/pasta/postre)</i></label>
+                    <label class="checkbox-item"><input type="checkbox"> Muy alto <i style="color:#888; margin-left:5px; font-weight:400;">(ej. buffet/dulces)</i></label>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="form-actions">
+            <button class="btn-borrar">Borrar</button>
+            <button class="btn-guardar">Guardar</button>
+        </footer>
+    </main>
+
+</body>
+</html>
