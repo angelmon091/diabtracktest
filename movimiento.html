@@ -6,7 +6,7 @@
     <title>DiabTrack - Movimiento</title>
     <link rel="stylesheet" href="css/signos1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </head>
+</head>
 <body>
 
    <header class="navbar">
@@ -53,15 +53,15 @@
         <h1>Registro de Datos</h1>
 
         <section class="categories">
-            <div class="card">Signos Vitales</div>
-            <div class="card">Síntomas</div>
-            <div class="card">Nutrición</div>
-            <div class="card" style="border-color: var(--accent-blue);">Movimiento</div>
+            <button type="button" class="card">Signos Vitales</button>
+            <button type="button" class="card">Síntomas</button>
+            <button type="button" class="card">Nutrición</button>
+            <button type="button" class="card active-card">Movimiento</button>
         </section>
 
-        <div class="movement-layout">
+        <form class="movement-layout">
             
-            <div class="col-left">
+            <div class="movement-group group-time-intensity">
                 
                 <h3 class="section-title">Duración de Actividad: 0 min</h3>
                 
@@ -88,7 +88,7 @@
 
             </div>
 
-            <div class="col-right">
+            <div class="movement-group group-activity-type">
                 <h3 class="section-title">¿Qué tipo de actividad realizó?</h3>
 
                 <div class="activity-block">
@@ -99,10 +99,10 @@
                         </span>
                     </label>
                     <div class="activity-icons">
-                        <img src="img/medios/iconos/directions_walk.png">
-                        <img src="img/medios/iconos/Vector.png">
-                        <img src="img/medios/iconos/pool.png">
-                        <img src="img/medios/iconos/directions_bike.png">
+                        <img src="img/medios/iconos/directions_walk.png" alt="caminar">
+                        <img src="img/medios/iconos/Vector.png" alt="correr">
+                        <img src="img/medios/iconos/pool.png" alt="nadar">
+                        <img src="img/medios/iconos/directions_bike.png" alt="bici">
                     </div> 
                 </div>
 
@@ -114,8 +114,8 @@
                         </span>
                     </label>
                     <div class="activity-icons">
-                        <img src="img/medios/iconos/Group.png">
-                        <img src="img/medios/iconos/fitness_center.png">
+                        <img src="img/medios/iconos/Group.png" alt="pesas">
+                        <img src="img/medios/iconos/fitness_center.png" alt="gimnasio">
                     </div>
                 </div>
 
@@ -127,8 +127,8 @@
                         </span>
                     </label>
                     <div class="activity-icons">
-                        <img src="img/medios/iconos/sports_handball.png">
-                        <img src="img/medios/iconos/sports_kabaddi.png">
+                        <img src="img/medios/iconos/sports_handball.png" alt="deporte">
+                        <img src="img/medios/iconos/sports_kabaddi.png" alt="contacto">
                     </div>
                 </div>
 
@@ -140,8 +140,8 @@
                         </span>
                     </label>
                     <div class="activity-icons">
-                        <img src="img/medios/iconos/yoga.png">
-                        <img src="img/medios/iconos/accessibility_new.png">
+                        <img src="img/medios/iconos/yoga.png" alt="yoga">
+                        <img src="img/medios/iconos/accessibility_new.png" alt="estirar">
                     </div>
                 </div>
 
@@ -153,15 +153,22 @@
                         </span>
                     </label>
                     <div class="activity-icons">
-                        <img src="img/medios/iconos/cleaning_services.png">
-                        <img src="img/medios/iconos/nature_people.png">
+                        <img src="img/medios/iconos/cleaning_services.png" alt="limpieza">
+                        <img src="img/medios/iconos/nature_people.png" alt="jardin">
                     </div>
                 </div>
 
             </div>
-        </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-borrar">Borrar</button>
+                <button type="submit" class="btn-guardar">Guardar</button>
+            </div>
+
+        </form>
     </main>
-<footer class="site-footer">
+
+    <footer class="site-footer">
         <div class="footer-content">
             <div class="links">
                 <a href="https://youtube.com">Políticas de Privacidad</a>
@@ -171,11 +178,9 @@
             <div class="social-icons">
                 <a href="https://youtube.com"><i class="fa-brands fa-instagram"></i></a>
                 <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-apple"></i>
-                <a href="datapersonal.html"><i class="fa-brands fa-reddit"></i></a>
             </div>
         </div>
-</footer>
+    </footer>
 
 </body>
 </html>

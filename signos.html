@@ -11,7 +11,9 @@
 
    <header class="navbar">
         <div class="navbar-content">
-            <h2 class="logo-small">D<span>ia</span>bTrack</h2>
+            <div class="brand-area">
+                <h2 class="logo-small">D<span>ia</span>bTrack</h2>
+            </div>
             
             <div class="nav-search">
                 <input type="text" placeholder="Buscar...">
@@ -53,13 +55,13 @@
         <h1>Registro de Datos</h1>
 
         <section class="categories">
-            <div class="card active-card">Signos Vitales</div>
-            <div class="card">Síntomas</div>
-            <div class="card">Nutrición</div>
-            <div class="card">Movimiento</div>
+            <button type="button" class="card active-card">Signos Vitales</button>
+            <button type="button" class="card">Síntomas</button>
+            <button type="button" class="card">Nutrición</button>
+            <button type="button" class="card">Movimiento</button>
         </section>
 
-        <div class="main-content">
+        <form class="main-content">
             <section class="form-section">
                 <div class="input-group">
                     <label>Nivel de Glucosa: <strong>120mg/dL</strong></label>
@@ -90,31 +92,33 @@
             <aside class="timing-panel">
                 <h3>Momento de la Medición</h3>
                 <div class="timing-grid">
-                    <div class="timing1">
-                        <button class="time-btn active-btn">Ayunas</button>
-                        <img src="img/medios/iconos/wb_sunny.png">
-                    </div>
-    
-                    <div class="timing2">
-                        <button class="time-btn">Antes de Comer
-                        <img src="img/medios/iconos/no_meals_ouline.png">
-                        </button>
-                    </div>
-                    
-                    <div class="timing3">
-                        <button class="time-btn">Después de Comer
-                        <img src="img/medios/iconos/restaurant.png">
-                        </button>
-                    </div>
-                    
-                    <div class="timing4">
-                        <button class="time-btn">Al Dormir
-                        <img src="img/medios/iconos/bedtime.png">
-                        </button>
-                    </div>
+                    <button type="button" class="time-btn active-btn">
+                        <img src="img/medios/iconos/wb_sunny.png" alt="sol">
+                        <span>Ayunas</span>
+                    </button>
+
+                    <button type="button" class="time-btn">
+                        <img src="img/medios/iconos/no_meals_ouline.png" alt="sin comida">
+                        <span>Antes de Comer</span>
+                    </button>
+
+                    <button type="button" class="time-btn">
+                        <img src="img/medios/iconos/restaurant.png" alt="cubiertos">
+                        <span>Después de Comer</span>
+                    </button>
+
+                    <button type="button" class="time-btn">
+                        <img src="img/medios/iconos/bedtime.png" alt="luna">
+                        <span>Al Dormir</span>
+                    </button>
                 </div>
             </aside>
-        </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-borrar">Borrar</button>
+                <button type="submit" class="btn-guardar">Guardar</button>
+            </div>
+        </form>
 
     </main>
 
@@ -128,8 +132,6 @@
             <div class="social-icons">
                 <a href="https://youtube.com"><i class="fa-brands fa-instagram"></i></a>
                 <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-apple"></i>
-                <a href="datapersonal.html"><i class="fa-brands fa-reddit"></i></a>
             </div>
         </div>
     </footer>

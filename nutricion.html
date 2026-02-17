@@ -53,70 +53,69 @@
         <h1>Registro de Datos</h1>
 
         <section class="categories">
-            <div class="card">Signos Vitales</div>
-            <div class="card">Síntomas</div>
-            <div class="card" style="border-color: var(--accent-blue);">Nutrición</div>
-            <div class="card">Movimiento</div>
+            <button type="button" class="card">Signos Vitales</button>
+            <button type="button" class="card">Síntomas</button>
+            <button type="button" class="card active-card">Nutrición</button>
+            <button type="button" class="card">Movimiento</button>
         </section>
 
-        <div class="nutrition-layout">
+        <form class="nutrition-layout">
             
-            <div class="col-left">
-                <div class="nutrition-group">
-                    <h3>Tipo de Comida</h3>
-                    <label class="checkbox-item"><input type="checkbox"> Desayuno</label>
-                    <label class="checkbox-item"><input type="checkbox"> Almuerzo</label>
-                    <label class="checkbox-item"><input type="checkbox"> Cena</label>
-                    <label class="checkbox-item"><input type="checkbox"> Snack/Colación</label>
-                    <label class="checkbox-item"><input type="checkbox"> Corrección <i style="color:#888; margin-left:5px; font-weight:400;">(solo insulina)</i></label>
-                </div>
-
-                <div class="nutrition-group">
-                    <h3>Hora</h3>
-                    <input type="text" class="pill-input" placeholder="Ingrese la hora de consumo (hh:mm)">
-                </div>
-
-                <div class="nutrition-group">
-                    <h3>Alimentos Ingeridos</h3>
-                    <label class="checkbox-item"><input type="checkbox"> Pan/Cereales</label>
-                    <label class="checkbox-item"><input type="checkbox"> Proteínas <i style="color:#888; margin-left:5px; font-weight:400;">(carne/huevo)</i></label>
-                    <label class="checkbox-item"><input type="checkbox"> Vegetales</label>
-                    <label class="checkbox-item"><input type="checkbox"> Fruta</label>
-                    <label class="checkbox-item"><input type="checkbox"> Lácteos</label>
-                    <label class="checkbox-item"><input type="checkbox"> Grasas/Aceites</label>
-                </div>
+            <div class="nutrition-group">
+                <h3>Tipo de Comida</h3>
+                <label class="checkbox-item"><input type="checkbox"> Desayuno</label>
+                <label class="checkbox-item"><input type="checkbox"> Almuerzo</label>
+                <label class="checkbox-item"><input type="checkbox"> Cena</label>
+                <label class="checkbox-item"><input type="checkbox"> Snack/Colación</label>
+                <label class="checkbox-item"><input type="checkbox"> Corrección <i style="color:#888; margin-left:5px; font-weight:400;">(solo insulina)</i></label>
             </div>
 
-            <div class="col-right">
-                <div class="nutrition-group">
-                    <h3>Carbohidratos Totales</h3>
-                    <input type="text" class="pill-input" placeholder="Ingrese la cantidad (gramos/porciones)">
-                </div>
-
-                <div class="nutrition-group">
-                    <h3>¿Tomó medicación antes de comer?</h3>
-                    <label class="checkbox-item"><input type="checkbox"> Insulina Rápida</label>
-                    <label class="checkbox-item"><input type="checkbox"> Medicamento Oral</label>
-                    <label class="checkbox-item"><input type="checkbox"> Ninguno</label>
-                    
-                    <input type="text" class="pill-input" placeholder="Ingrese la cantidad (n unidades/n pastilla)" style="margin-top:10px;">
-                    <input type="text" class="pill-input" placeholder="Ingrese la hora de consumo (hh:mm)">
-                </div>
-
-                <div class="nutrition-group">
-                    <h3>Impacto Glucémico Esperado</h3>
-                    <label class="checkbox-item"><input type="checkbox"> Bajo <i style="color:#888; margin-left:5px; font-weight:400;">(ej. ensalada con proteína)</i></label>
-                    <label class="checkbox-item"><input type="checkbox"> Medio <i style="color:#888; margin-left:5px; font-weight:400;">(ej. comida balanceada)</i></label>
-                    <label class="checkbox-item"><input type="checkbox"> Alto <i style="color:#888; margin-left:5px; font-weight:400;">(ej. pizza/pasta/postre)</i></label>
-                    <label class="checkbox-item"><input type="checkbox"> Muy alto <i style="color:#888; margin-left:5px; font-weight:400;">(ej. buffet/dulces)</i></label>
-                </div>
+            <div class="nutrition-group">
+                <h3>Carbohidratos Totales</h3>
+                <input type="text" class="pill-input" placeholder="Ingrese la cantidad (gramos/porciones)">
+                
+                <h3 style="margin-top: 20px;">Hora</h3>
+                <input type="text" class="pill-input" placeholder="Ingrese la hora de consumo (hh:mm)">
             </div>
 
-        </div>
+            <div class="nutrition-group">
+                <h3>Alimentos Ingeridos</h3>
+                <label class="checkbox-item"><input type="checkbox"> Pan/Cereales</label>
+                <label class="checkbox-item"><input type="checkbox"> Proteínas <i style="color:#888; margin-left:5px; font-weight:400;">(carne/huevo)</i></label>
+                <label class="checkbox-item"><input type="checkbox"> Vegetales</label>
+                <label class="checkbox-item"><input type="checkbox"> Fruta</label>
+                <label class="checkbox-item"><input type="checkbox"> Lácteos</label>
+                <label class="checkbox-item"><input type="checkbox"> Grasas/Aceites</label>
+            </div>
+
+            <div class="nutrition-group">
+                <h3>¿Tomó medicación antes de comer?</h3>
+                <label class="checkbox-item"><input type="checkbox"> Insulina Rápida</label>
+                <label class="checkbox-item"><input type="checkbox"> Medicamento Oral</label>
+                <label class="checkbox-item"><input type="checkbox"> Ninguno</label>
+                
+                <input type="text" class="pill-input" placeholder="Ingrese la cantidad (n unidades/n pastilla)" style="margin-top:10px;">
+                <input type="text" class="pill-input" placeholder="Ingrese la hora de consumo (hh:mm)">
+            </div>
+
+             <div class="nutrition-group">
+                <h3>Impacto Glucémico Esperado</h3>
+                <label class="checkbox-item"><input type="checkbox"> Bajo <i style="color:#888; margin-left:5px; font-weight:400;">(ej. ensalada con proteína)</i></label>
+                <label class="checkbox-item"><input type="checkbox"> Medio <i style="color:#888; margin-left:5px; font-weight:400;">(ej. comida balanceada)</i></label>
+                <label class="checkbox-item"><input type="checkbox"> Alto <i style="color:#888; margin-left:5px; font-weight:400;">(ej. pizza/pasta/postre)</i></label>
+                <label class="checkbox-item"><input type="checkbox"> Muy alto <i style="color:#888; margin-left:5px; font-weight:400;">(ej. buffet/dulces)</i></label>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-borrar">Borrar</button>
+                <button type="submit" class="btn-guardar">Guardar</button>
+            </div>
+
+        </form>
 
     </main>
 
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-content">
             <div class="links">
                 <a href="https://youtube.com">Políticas de Privacidad</a>
@@ -126,8 +125,6 @@
             <div class="social-icons">
                 <a href="https://youtube.com"><i class="fa-brands fa-instagram"></i></a>
                 <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-apple"></i>
-                <a href="datapersonal.html"><i class="fa-brands fa-reddit"></i></a>
             </div>
         </div>
     </footer>
