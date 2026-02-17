@@ -16,7 +16,7 @@
             <div class="nav-search d-none d-md-block">
                 <input type="text" class="form-control" placeholder="Buscar...">
             </div>
-
+            
             <nav class="nav-menu">
                 <a href="dashboardc.html" class="nav-item active">
                     <i class="fa-solid fa-house"></i>
@@ -53,13 +53,13 @@
         <h1>Registro de Datos</h1>
 
         <section class="categories">
-            <div class="card">Signos Vitales</div>
-            <div class="card" style="border-color: var(--accent-blue);">Síntomas</div>
-            <div class="card">Nutrición</div>
-            <div class="card">Movimiento</div>
+            <button type="button" class="card">Signos Vitales</button>
+            <button type="button" class="card active-card">Síntomas</button>
+            <button type="button" class="card">Nutrición</button>
+            <button type="button" class="card">Movimiento</button>
         </section>
 
-        <div class="symptoms-layout">
+        <form class="symptoms-layout">
             
             <div class="symptom-group">
                 <h3>Síntomas Físicos</h3>
@@ -94,12 +94,16 @@
                 <label class="checkbox-item"><input type="checkbox"> Hormigueo en labios y/o lengua</label>
             </div>
 
-        </div>
+            <div class="form-actions">
+                <button type="button" class="btn-borrar">Borrar</button>
+                <button type="submit" class="btn-guardar">Guardar</button>
+            </div>
+
+        </form>
 
     </main>
 
-
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-content">
             <div class="links">
                 <a href="https://youtube.com">Políticas de Privacidad</a>
@@ -109,12 +113,9 @@
             <div class="social-icons">
                 <a href="https://youtube.com"><i class="fa-brands fa-instagram"></i></a>
                 <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-apple"></i>
-                <a href="datapersonal.html"><i class="fa-brands fa-reddit"></i></a>
             </div>
         </div>
     </footer>
 
 </body>
 </html>
-

@@ -1,13 +1,285 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/index+.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <title>DiabTrack - Monitorea tu salud</title>
-    </head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <body>
+    <title>DiabTrack - Monitorea tu salud</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-cyan: #4ed9e6; 
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --bg-light: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Vital para que el zoom no rompa las cajas */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden; /* Evita scroll horizontal indeseado */
+        }
+
+        /* --- NAVBAR (Diseño Original Intacto) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 5%;
+            position: absolute; 
+            width: 100%;
+            z-index: 10;
+            background: transparent;
+            flex-wrap: wrap; /* Permite que los elementos bajen si hay zoom */
+        }
+
+        .logo {
+            font-size: 28.8px;
+            color: white;
+            white-space: nowrap; /* Evita que el logo se parta en dos líneas */
+        }                                                                               
+
+        .logo span {
+            color: #00c2e0;
+        }
+
+        .navbar nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap; /* Permite que los enlaces se acomoden con zoom */
+        }
+
+        .navbar ul li {
+            margin-left: 32px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: var(--white); 
+            font-size: 14.4px;
+            font-weight: 500;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .navbar ul li a:hover {
+            color: var(--primary-cyan);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            /* Usamos min-height en vez de height para soportar Zoom y contenido extra */
+            min-height: 90vh; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://www.accu-chek.com.mx/sites/g/files/iut326/f/article_images/rdc_blog_nota01_03.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            padding: 80px 5% 40px 5%; /* Padding superior extra para que el nav no tape el texto */
+            color: var(--white); 
+        }
+
+        .hero-content {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Fuente fluida: clamp ayuda a que el texto escale entre un mínimo y un máximo */
+        .hero-content h1 {
+            font-size: clamp(36px, 5vw, 56px); 
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-cyan);
+        }
+
+        .hero-content p {
+            font-size: clamp(16px, 2.5vw, 19.2px);
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+
+        .btn-acceder {
+            background-color: var(--primary-cyan);
+            color: var(--white);
+            border: none;
+            padding: 12px 40px;
+            font-size: 17.6px;
+            font-weight: bold;
+            border-radius: 30px; 
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(78, 217, 230, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-acceder:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(78, 217, 230, 0.6);
+        }
+
+        /* --- FEATURES --- */
+        .features {
+            padding: 80px 5%;
+            text-align: center;
+            background-color: var(--white);
+        }
+
+        .features h2 {
+            color: #7abcc7; 
+            font-size: clamp(24px, 4vw, 32px);
+            margin-bottom: 24px;
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 0 auto 64px;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .target {
+            font-weight: 600;
+            font-size: 17px;        
+            color: var(--text-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* GRID RESPONSIVO INTELIGENTE */
+        .services-grid {
+            display: flex;
+            justify-content: space-around; 
+            align-items: flex-start;
+            max-width: 1000px; 
+            margin: 0 auto;    
+            gap: 40px; /* Espacio entre elementos */
+            flex-wrap: wrap; /* CRUCIAL: Permite que bajen si no caben */
+        }
+
+        /* Unificamos las clases service-item para no repetir código */
+        [class^="service-item"] {
+            flex: 1 1 250px; /* Crece, se encoge, base de 250px */
+            display: flex;
+            flex-direction: column; 
+            align-items: center;    
+            text-align: center;
+            min-width: 200px; /* Evita que se hagan demasiado pequeños */
+        }
+
+        [class^="service-item"] p {
+            font-weight: 600;
+            font-size: 17px;        
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        [class^="service-item"] img {
+            width: 100%;
+            max-width: 150px;   
+            height: auto;
+            margin-bottom: 20px; 
+            opacity: 0.8; 
+            transition: opacity 0.3s;
+        }
+
+        /* --- FOOTER --- */
+        .site-footer {
+            padding: 20px 5%;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Para responsividad */
+            gap: 20px;
+            font-size: 12.8px;
+            color: #A0A0A0;
+        }
+
+        .footer-content .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-content .links a {
+            text-decoration: none;
+            color: #A0A0A0;
+        }
+
+        .social-icons i {
+            margin-left: 15px;
+            font-size: 19.2px;
+            cursor: pointer;
+            color: #A0A0A0;
+        }
+
+        /* =========================================
+           MEDIA QUERIES (Ajustes para Móvil)
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Navbar en móvil: Se mantiene transparente y absoluta, 
+               pero los elementos se centran verticalmente */
+            .navbar {
+                flex-direction: column;
+                padding-top: 15px;
+            }
+            
+            .navbar nav {
+                margin-top: 15px;
+                width: 100%;
+            }
+
+            .navbar ul {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .navbar ul li {
+                margin: 0 10px; /* Espacio uniforme */
+            }
+
+            /* Texto Hero más legible en móvil */
+            .hero {
+                text-align: center;
+                justify-content: center;
+                /* Agregamos un degradado más oscuro en móvil para que se lea mejor el texto blanco */
+                background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                            url('https://www.accu-chek.com.mx/sites/g/files/iut326/f/article_images/rdc_blog_nota01_03.png') no-repeat center center;
+                background-size: cover;
+            }
+
+            .hero-content {
+                padding-top: 60px; /* Espacio para que el nav no tape el título */
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
     <header class="navbar">
         <h1 class="logo">D<span>ia</span>bTrack</h1>
         <nav>
@@ -53,8 +325,6 @@
                     <p>Análisis Detallados</p>
                 </div>
                 
-                
-
                 <div class="service-item3">
                   <img src="img/medios/iconos/perm_contact_calendar.png" alt="calendario">   
                   <p>Consejos Personalizados</p>
@@ -78,6 +348,5 @@
         </div>
     </footer>
         
-    </body>
-
+</body>
 </html>
