@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiabTrack - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/visualizacion.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-content">
+            <h2 class="logo-small">D<span>ia</span>bTrack</h2>
+            
+            <div class="nav-search d-none d-lg-block">
+                <input type="text" class="form-control" placeholder="Buscar...">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboardc.html" class="nav-item ">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="visualizacion.html" class="nav-item active">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Resumen</span>
+                </a>
+                <a href="signos.html" class="nav-item">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Nuevo</span>
+                </a>
+            </nav>
+
+            <div class="user-section">
+                <a href="#" class="nav-item me-3">
+                    <i class="fa-solid fa-bell notification"></i>
+                </a>
+                <div class="user-card">
+                    <div class="user-text d-none d-sm-block">
+                        <span class="user-name">Angelom091</span>
+                        <span class="user-email">UnoDos@demo.com</span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="img/medios/etc/yo.jpg" alt="yo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container-fluid px-4 mt-4">
+        <div class="dashboard-wrapper p-4">
+            
+            <h2 class="section-title mb-4">Previsualización de Datos</h2>
+
+            <div class="row g-3">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between">
+                            <div class="val-big">98</div>
+                            <div class="icon-circle check">✓</div>
+                        </div>
+                        <div class="unit-text">mg/DL</div>
+                        <div class="label-text">Glucosa Actual</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="stat-card">
+                        <div class="label-title">Glucosa en Ayunas</div>
+                        <div class="chart-placeholder">
+                            <div class="wave-line"></div>
+                        </div>
+                        <div class="footer-small">Hoy 1S 1M 3M 6M</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="stat-card">
+                        <div class="label-title">Promedio 7 Días</div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="val-med">125 <span class="unit-inline">mg/DL</span></div>
+                            <div class="arrow-up">↑</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="stat-card">
+                        <div class="label-title text-center">A1c Estimada</div>
+                        <div class="val-big text-center">6.7 <span class="percent">%</span></div>
+                        <div class="footer-small text-center">Últimos 90 días<br>23 Ene 2026 13:46</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between">
+                            <div class="label-title">Carbohidratos Diaries</div>
+                            <span>✎</span>
+                        </div>
+                        <div class="val-big text-center">180 <span class="unit-inline">g</span></div>
+                        <div class="footer-small text-center">Unidades</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="stat-card d-flex flex-column align-items-center justify-content-center">
+                        <div class="label-title">Tiempo en Rango</div>
+                        <div class="donut-chart"></div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between">
+                            <div class="label-title">Presión Arterial</div>
+                            <div class="icon-circle info">✓</div>
+                        </div>
+                        <div class="val-med">120/80</div>
+                        <div class="footer-small">Normal ♡<br>27 Enero 2026 08:42</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="stat-card">
+                        <div class="label-title">Sueño</div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="val-med">7.5</div>
+                            <div class="unit-inline">horas</div>
+                            <div class="icon-simple">✓ 🌙</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="stat-card">
+                        <div class="label-title">Agua Consumida</div>
+                        <div class="val-med">1.8 <span class="unit-inline">Litros</span></div>
+                        <div class="footer-small">Últimas 24 horas 💧</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12 d-flex justify-content-center gap-3">
+                    <button class="btn-cyan-outline">Lapse de Tiempo ▾</button>
+                    <button class="btn-cyan-solid">Descargar Reporte</button>
+                </div>
+            </div>
+
+            <div class="metrics-section mt-5 p-4">
+                <h3 class="text-center fw-bold mb-1">Métricas Clave Diabetes</h3>
+                <p class="text-center text-muted small">27 Enero 2026 08:55:40 CST</p>
+                
+                <div class="chart-container-large">
+                    <div class="fake-graph">
+                        <div class="line blue"></div>
+                        <div class="line green"></div>
+                        <div class="line orange"></div>
+                    </div>
+                    <div class="insulina-bars d-flex align-items-end gap-1">
+                        <div class="bar" style="height: 20px;"></div>
+                        <div class="bar" style="height: 35px;"></div>
+                        <div class="bar" style="height: 25px;"></div>
+                        <div class="bar" style="height: 40px;"></div>
+                        <div class="bar" style="height: 15px;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="links">
+                <a href="#">Políticas de Privacidad</a>
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Desarrolladores</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-apple"></i>
+                <a href="#"><i class="fa-brands fa-reddit"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

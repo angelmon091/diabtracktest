@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DiabTrack - Dashboard</title>
-    <link rel="stylesheet" href="css/alimentacion.css">
+    <title>DiabTrack - Alimentación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/alim.css">
 </head>
 <body class="dashboard-body">
 
@@ -13,31 +14,31 @@
         <div class="navbar-content">
             <h2 class="logo-small">D<span>ia</span>bTrack</h2>
             
-            <div class="nav-search">
-                <input type="text" placeholder="Buscar...">
+            <div class="nav-search d-none d-lg-block">
+                <input type="text" class="form-control" placeholder="Buscar...">
             </div>
 
             <nav class="nav-menu">
-                <a href="#" class="nav-item active">
+                <a href="dashboardc.html" class="nav-item active">
                     <i class="fa-solid fa-house"></i>
                     <span>Inicio</span>
                 </a>
-                <a href="#" class="nav-item">
+                <a href="resumen.html" class="nav-item">
                     <i class="fa-solid fa-chart-column"></i>
                     <span>Resumen</span>
                 </a>
-                <a href="#" class="nav-item">
+                <a href="signos.html" class="nav-item">
                     <i class="fa-solid fa-plus"></i>
                     <span>Nuevo</span>
                 </a>
             </nav>
 
             <div class="user-section">
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item me-3">
                     <i class="fa-solid fa-bell notification"></i>
                 </a>
                 <div class="user-card">
-                    <div class="user-text">
+                    <div class="user-text d-none d-sm-block">
                         <span class="user-name">Angelom091</span>
                         <span class="user-email">UnoDos@demo.com</span>
                     </div>
@@ -49,9 +50,9 @@
         </div>
     </header>
 
-    <main class="dashboard-content">
+    <main class="container-fluid py-4 px-md-5">
         
-        <section class="content-card carrousel-section">
+        <section class="content-card carrousel-section mb-4">
             <h2 class="section-title">Alimentación Con IA</h2>
             <hr class="divider">
 
@@ -60,97 +61,91 @@
                 
                 <div class="food-grid">
                     <div class="food-card"><img src="https://mirecetafacil.com/wp-content/uploads/2021/01/pollo-saludable-con-lechuga-y-aguacate.jpg" alt="Comida 1"></div> 
-                    <div class="food-card"><img src="https://thumbs.dreamstime.com/b/plato-de-cena-diab%C3%A9tico-equilibrado-con-prote%C3%ADna-verduras-y-granos-para-una-alimentaci%C3%B3n-saludable-un-controlado-en-parte-394989319.jpg" alt="Comida 2"></div>
-                    <div class="food-card"><img src="https://foodsmartcolorado.colostate.edu/wp-content/uploads/2020/01/Screenshot-50.png" alt="Comida 3"></div> </div>
+                    <div class="food-card d-none d-md-block"><img src="https://thumbs.dreamstime.com/b/plato-de-cena-diab%C3%A9tico-equilibrado-con-prote%C3%ADna-verduras-y-granos-para-una-alimentaci%C3%B3n-saludable-un-controlado-en-parte-394989319.jpg" alt="Comida 2"></div>
+                    <div class="food-card d-none d-md-block"><img src="https://foodsmartcolorado.colostate.edu/wp-content/uploads/2020/01/Screenshot-50.png" alt="Comida 3"></div> 
+                </div>
 
                 <button class="arrow-next">❯</button> 
-                 
             </div>
             
-            <div class="dots">
-                <span class="dot"></span>
+            <div class="dots mt-3">
+                <span class="dot active"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
             </div>
 
-            <button class="btn-primary btn-ia">Generar Recomendación IA</button>
+            <div class="text-center mt-4">
+                <button class="btn-primary btn-ia w-100 w-md-auto">Generar Recomendación IA</button>
+            </div>
         </section>
 
         <section class="content-card stats-section">
             <h2 class="section-title">Aspectos Importantes</h2>
             
-            <div class="metrics-row">
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <img src="https://tse3.mm.bing.net/th/id/OIP.t0oNlqrCS7rlj0eHtlbEtgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3L" alt="Calorías" class="metric-icon">
-                        <span>Calorías</span>
-                    </div>
-                    <div class="metric-value">
-                        <span class="big-num">2500</span> <span class="goal">/8000kcal</span>
-                    </div>
-                    <div class="metric-footer">
-                        <span class="week-label">This Month: </span>
-                        <span class="week-value">1386 kcal</span>
-                    </div>
-                    <div class="bar-chart">
-                        <div class="bar"></div><div class="bar"></div><div class="bar active"></div><div class="bar"></div><div class="bar"></div>
-                    </div>
-                </div>
-
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <img src="https://tse4.mm.bing.net/th/id/OIP.HP-u9oThjEctzwLpWSmCAwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Moving" class="metric-icon">
-                        <span>Moving</span>
-                    </div>
-                    <div class="metric-value">
-                        <span class="big-num">450</span> <span class="goal">/30 minutos</span>
-                    </div>
-                    <div class="metric-footer">
-                        <span class="week-label">This Month</span>
-                        <span class="week-value">15 Times</span>
-                    </div>
-                    <div class="dot-chart">
-                        <div class="activity-dots">
-                            <span class="a-dot"></span><span class="a-dot"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot"></span>
-                            <span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot"></span><span class="a-dot orange"></span><span class="a-dot orange"></span>
-                            <span class="a-dot"></span><span class="a-dot"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot"></span>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="metric-card h-100">
+                        <div class="metric-header">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.t0oNlqrCS7rlj0eHtlbEtgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3L" alt="Calorías" class="metric-icon">
+                            <span>Calorías</span>
+                        </div>
+                        <div class="metric-value">
+                            <span class="big-num">2500</span> <span class="goal">/8000kcal</span>
+                        </div>
+                        <div class="bar-chart mt-3">
+                            <div class="bar"></div><div class="bar"></div><div class="bar active"></div><div class="bar"></div><div class="bar"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <img src="https://th.bing.com/th/id/R.5470a5065e993c5c5eb8be13f0f55e5f?rik=515%2f3iYc6fUCWg&pid=ImgRaw&r=0" alt="Steps" class="metric-icon">
-                        <span>Steps</span>
+                <div class="col-12 col-md-4">
+                    <div class="metric-card h-100">
+                        <div class="metric-header">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.HP-u9oThjEctzwLpWSmCAwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Moving" class="metric-icon">
+                            <span>Moving</span>
+                        </div>
+                        <div class="metric-value">
+                            <span class="big-num">450</span> <span class="goal">/30 min</span>
+                        </div>
+                        <div class="activity-dots mt-3">
+                            <span class="a-dot"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot"></span><span class="a-dot orange"></span>
+                        </div>
                     </div>
-                    <div class="metric-value">
-                        <span class="big-num">1876</span> <span class="goal">/8000Steps</span>
-                    </div>
-                    <div class="metric-footer">
-                        <span class="week-label">Today</span>
-                        <span class="week-value">This Month: 12,450 Steps</span>
-                    </div>
-                    <div class="circle-chart-container">
-                        <div class="circle-progress"></div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="metric-card h-100">
+                        <div class="metric-header">
+                            <img src="https://th.bing.com/th/id/R.5470a5065e993c5c5eb8be13f0f55e5f?rik=515%2f3iYc6fUCWg&pid=ImgRaw&r=0" alt="Steps" class="metric-icon">
+                            <span>Steps</span>
+                        </div>
+                        <div class="metric-value">
+                            <span class="big-num">1876</span> <span class="goal">/8000</span>
+                        </div>
+                        <div class="circle-chart-container mt-3">
+                            <div class="circle-progress"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="site-footer">
+
+        <footer class="site-footer">
         <div class="footer-content">
             <div class="links">
-                <a href="https://youtube.com">Políticas de Privacidad</a>
+                <a href="#">Políticas de Privacidad</a>
                 <a href="#">Términos y Condiciones</a>
                 <a href="#">Desarrolladores</a>
             </div>
             <div class="social-icons">
-                <a href="https://youtube.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-brands fa-apple"></i>
-                <a href="datapersonal.html"><i class="fa-brands fa-reddit"></i></a>
+                <a href="#"><i class="fa-brands fa-reddit"></i></a>
             </div>
         </div>
     </footer>
-</body>
+    
+    </body>
 </html>

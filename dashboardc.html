@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DiabTrack - Dashboard</title>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <title>DiabTrack - Dashboard Responsivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dash.css">
 </head>
 <body>
 
@@ -13,8 +14,8 @@
         <div class="navbar-content">
             <h2 class="logo-small">D<span>ia</span>bTrack</h2>
             
-            <div class="nav-search">
-                <input type="text" placeholder="Buscar...">
+            <div class="nav-search d-none d-lg-block">
+                <input type="text" class="form-control" placeholder="Buscar...">
             </div>
 
             <nav class="nav-menu">
@@ -22,7 +23,7 @@
                     <i class="fa-solid fa-house"></i>
                     <span>Inicio</span>
                 </a>
-                <a href="resumen.html" class="nav-item">
+                <a href="visualizacion.html" class="nav-item">
                     <i class="fa-solid fa-chart-column"></i>
                     <span>Resumen</span>
                 </a>
@@ -33,11 +34,11 @@
             </nav>
 
             <div class="user-section">
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item me-3">
                     <i class="fa-solid fa-bell notification"></i>
                 </a>
                 <div class="user-card">
-                    <div class="user-text">
+                    <div class="user-text d-none d-sm-block">
                         <span class="user-name">Angelom091</span>
                         <span class="user-email">UnoDos@demo.com</span>
                     </div>
@@ -49,172 +50,187 @@
         </div>
     </header>
 
-<main class="dashboard-wrapper">
-    <aside class="left-panel">
-        <div class="glass-card tool-section">
-            <div class="tool-header">
-                <i class="fa-solid fa-microchip"></i>
-                <span>Gestión DiabTrack</span>
-            </div>
+    <main class="container-fluid py-4 px-md-5">
+        <div class="row g-4">
             
-            <div class="action-stack">
-                <a href="alimentacion.html" class="action-item ai-gold">
-                    <div class="action-icon"><i class="fa-solid fa-robot"></i></div>
-                    <div class="action-info">
-                        <strong>Nutrición IA</strong>
-                        <p>Planificación de comidas</p>
+            <aside class="col-12 col-xl-3">
+                <div class="glass-card p-4 mb-4">
+                    <div class="tool-header mb-4 d-flex align-items-center">
+                        <i class="fa-solid fa-gear me-2"></i>
+                        <span class="fw-bold">Gestión DiabTrack</span>
                     </div>
-                </a>
-                <a href="visualizacionhtml" class="action-item chart-blue">
-                    <div class="action-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <div class="action-info">
-                        <strong>Gráficos</strong>
-                        <p>Análisis de tendencias</p>
+                    
+                    <div class="d-flex flex-column gap-2">
+                        <a href="alimentacion.html" class="action-item">
+                            <div class="action-icon orange"><i class="fa-solid fa-robot"></i></div>
+                            <div class="ms-3">
+                                <strong class="d-block">Nutrición IA</strong>
+                                <p class="mb-0 extra-small text-muted">Planificación de comidas</p>
+                            </div>
+                        </a>
+                        <a href="visualizacion.html" class="action-item">
+                            <div class="action-icon blue"><i class="fa-solid fa-chart-line"></i></div>
+                            <div class="ms-3">
+                                <strong class="d-block">Gráficos</strong>
+                                <p class="mb-0 extra-small text-muted">Análisis de tendencias</p>
+                            </div>
+                        </a>
+                        <a href="signos.html" class="action-item">
+                            <div class="action-icon green"><i class="fa-solid fa-plus"></i></div>
+                            <div class="ms-3">
+                                <strong class="d-block">Registrar</strong>
+                                <p class="mb-0 extra-small text-muted">Añadir entrada diaria</p>
+                            </div>
+                        </a>
+                        <a href="ajustes.html" class="action-item">
+                            <div class="action-icon gray"><i class="fa-solid fa-sliders"></i></div>
+                            <div class="ms-3">
+                                <strong class="d-block">Ajustes</strong>
+                                <p class="mb-0 extra-small text-muted">Configurar perfil</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a href="signos.html" class="action-item add-green">
-                    <div class="action-icon"><i class="fa-solid fa-plus"></i></div>
-                    <div class="action-info">
-                        <strong>Registrar</strong>
-                        <p>Añadir entrada diaria</p>
+                </div>
+
+                <div class="glass-card p-4 d-none d-xl-block">
+                    <h6 class="fw-bold mb-3 text-center">Métricas Clave Diabetes</h6>
+                    <img src="img/medios/etc/Rectangle 35.png" alt="Gráfico" class="img-fluid rounded-4">
+                </div>
+            </aside>
+
+            <section class="col-12 col-xl-9">
+                <div class="d-flex justify-content-between align-items-end mb-4">
+                    <h3 class="fw-bold mb-0 fs-4">Previsualización de Datos <span class="text-primary">Total</span></h3>
+                    <div class="text-muted small d-none d-sm-block">10 de Febrero, 2026</div>
+                </div>
+
+                <div class="glass-card glucosa-hero p-4 p-md-5 mb-4 position-relative">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6 text-center text-md-start">
+                            <span class="text-muted fw-bold small mb-2 d-block">Glucosa en Ayunas</span>
+                            <div class="d-flex align-items-baseline justify-content-center justify-content-md-start">
+                                <h1 class="display-2 fw-bold mb-0">98</h1>
+                                <span class="ms-2 fs-4 text-muted">mg/DL</span>
+                            </div>
+                            <div class="vital-trend-pill mt-3 d-inline-block">
+                                <i class="fa-solid fa-circle-check me-1"></i> En rango aceptable
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <a href="ajustes.html" class="action-item settings-gray">
-                    <div class="action-icon"><i class="fa-solid fa-sliders"></i></div>
-                    <div class="action-info">
-                        <strong>Ajustes</strong>
-                        <p>Configurar perfil</p>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-12 col-md-4">
+                        <div class="glass-card p-4">
+                            <div class="stat-top mb-2 small fw-bold text-muted">
+                                <i class="fa-solid fa-dna text-info me-2"></i> A1c Estimada
+                            </div>
+                            <h4 class="fw-bold mb-1">6.7%</h4>
+                            <p class="text-muted extra-small mb-0">Últimos 90 días</p>
+                        </div>
                     </div>
-                </a>
-            </div>
+                    <div class="col-12 col-md-4">
+                        <div class="glass-card p-4">
+                            <div class="stat-top mb-2 small fw-bold text-muted">
+                                <i class="fa-solid fa-bread-slice text-info me-2"></i> Carbohidratos
+                            </div>
+                            <h4 class="fw-bold mb-1">180g</h4>
+                            <p class="text-muted extra-small mb-0">Meta: 200g</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="glass-card p-4">
+                            <div class="stat-top mb-2 small fw-bold text-muted">
+                                <i class="fa-solid fa-clock-rotate-left text-info me-2"></i> Tiempo en Rango
+                            </div>
+                            <h4 class="fw-bold mb-0">85%</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="fw-bold mb-4 fs-6">Aspectos Importantes</h5>
+
+                <div class="d-flex flex-column gap-3">
+                    <div class="glass-card p-3 p-md-4">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12 col-md-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="act-icon fire me-3"><i class="fa-solid fa-fire"></i></div>
+                                    <div>
+                                        <strong class="d-block small">Calorías</strong>
+                                        <span class="text-muted extra-small">2500 / 800kcal</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-9 col-md-8 px-md-4">
+                                <div class="progress-container">
+                                    <div class="progress-bar-custom bg-danger" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="col-3 col-md-1 text-end fw-bold small">75%</div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-3 p-md-4">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12 col-md-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="act-icon move me-3"><i class="fa-solid fa-bolt"></i></div>
+                                    <div>
+                                        <strong class="d-block small">Actividad</strong>
+                                        <span class="text-muted extra-small">450 / 800kcal</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-9 col-md-8 px-md-4">
+                                <div class="progress-container">
+                                    <div class="progress-bar-custom bg-warning" style="width: 50%"></div>
+                                </div>
+                            </div>
+                            <div class="col-3 col-md-1 text-end fw-bold small">50%</div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-3 p-md-4">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12 col-md-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="act-icon feet me-3"><i class="fa-solid fa-shoe-prints"></i></div>
+                                    <div>
+                                        <strong class="d-block small">Pasos</strong>
+                                        <span class="text-muted extra-small">6987 / 8000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-9 col-md-8 px-md-4">
+                                <div class="progress-container">
+                                    <div class="progress-bar-custom bg-primary" style="width: 87%"></div>
+                                </div>
+                            </div>
+                            <div class="col-3 col-md-1 text-end fw-bold small">87%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        <div class="glass-card gauge-module">
-            <div class="gauge-img">
-            <img src="img/medios/etc/Rectangle 35.png" alt="Glucosa" class="main-gauge-img" width="380">
-            </div>
-            <div class="gauge-status">
-            </div>
-        </div>
-    </aside>
-
-    <section class="main-content">
-        <div class="content-header">
-            <h3>Previsualización de Datos <span>Total</span></h3>
-            <div class="date-display">10 de Febrero, 2026</div>
-        </div>
-
-        <div class="vital-banner glass-card">
-            <div class="vital-info">
-                <span class="vital-label">Glucosa en Ayunas</span>
-                <div class="vital-value-group">
-                    <h2 class="huge-val">98</h2>
-                    <span class="huge-unit">mg/DL</span>
-                </div>
-                <div class="vital-trend-pill">
-                    <i class="fa-solid fa-circle-check"></i> En rango aceptable
-                </div>
-            </div>
-            <div class="vital-graph-preview">
-                <svg viewBox="0 0 400 100" class="mini-chart">
-                    <path d="M0 80 Q 50 20, 100 80 T 200 80 T 300 10 T 400 80" fill="none" stroke="#00C2E0" stroke-width="3" />
-                    <circle cx="300" cy="10" r="4" fill="#00C2E0" />
-                </svg>
-            </div>
-        </div>
-
-        <div class="secondary-stats-grid">
-            <div class="glass-card stat-item">
-                <div class="stat-top">
-                    <i class="fa-solid fa-dna"></i>
-                    <span>A1c Estimada</span>
-                </div>
-                <h3>6.7%</h3>
-                <p>Últimos 90 días</p>
-            </div>
-            <div class="glass-card stat-item">
-                <div class="stat-top">
-                    <i class="fa-solid fa-bread-slice"></i>
-                    <span>Carbohidratos</span>
-                </div>
-                <h3>180g</h3>
-                <p>Meta: 200g</p>
-            </div>
-            <div class="glass-card stat-item">
-                <div class="stat-top">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                    <span>Tiempo en Rango</span>
-                </div>
-                <div class="ring-simulation">
-                    <div class="ring-dot"></div>
-                    <span>85%</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-label">Aspectos Importantes</div>
-
-        <div class="important-metrics-stack">
-            <div class="glass-card activity-row">
-                <div class="act-lead">
-                    <div class="act-icon fire"><i class="fa-solid fa-fire-flame-curved"></i></div>
-                    <div class="act-title">
-                        <strong>Calorías</strong>
-                        <span>2500 / 800kcal</span>
-                    </div>
-                </div>
-                <div class="act-progress-container">
-                    <div class="progress-track"><div class="progress-fill calories" style="width: 75%"></div></div>
-                    <span class="progress-percent">75%</span>
-                </div>
-            </div>
-
-            <div class="glass-card activity-row">
-                <div class="act-lead">
-                    <div class="act-icon move"><i class="fa-solid fa-bolt"></i></div>
-                    <div class="act-title">
-                        <strong>Actividad (Moving)</strong>
-                        <span>450 / 800kcal</span>
-                    </div>
-                </div>
-                <div class="act-progress-container">
-                    <div class="progress-track"><div class="progress-fill moving" style="width: 50%"></div></div>
-                    <span class="progress-percent">50%</span>
-                </div>
-            </div>
-
-            <div class="glass-card activity-row">
-                <div class="act-lead">
-                    <div class="act-icon feet"><i class="fa-solid fa-shoe-prints"></i></div>
-                    <div class="act-title">
-                        <strong>Pasos</strong>
-                        <span>6987 / 8000</span>
-                    </div>
-                </div>
-                <div class="act-progress-container">
-                    <div class="progress-track"><div class="progress-fill steps" style="width: 87%"></div></div>
-                    <span class="progress-percent">87%</span>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
+    </main>
 
     <footer class="site-footer">
         <div class="footer-content">
             <div class="links">
-                <a href="https://youtube.com" alt="card">Políticas de Privacidad</a>
+                <a href="#">Políticas de Privacidad</a>
                 <a href="#">Términos y Condiciones</a>
                 <a href="#">Desarrolladores</a>
             </div>
             <div class="social-icons">
-                <a href="https://youtube.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-brands fa-apple"></i>
-                <a href="datapersonal.html"><i class="fa-brands fa-reddit"></i></a>
+                <a href="#"><i class="fa-brands fa-reddit"></i></a>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -4,19 +4,86 @@
     --bg: #F8F9FA;
     --text-gray: #A0A0A0;
     --shadow: 0 10px 30px rgba(0,0,0,0.05);
+    --primary: #00C2E0;
+    --accent: #89D9E8;
+    --bg: #F0F4F8;
+    --text-gray: #A0A0A0;
+    --diab-dark: #1E293B;
+    --card-radius: 30px;
+    
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Open Sans', sans-serif; background-color: var(--bg); min-height: 100vh; display: flex; flex-direction: column; }
-:root {
-    --bg-gray: #f2f2f2;
-    --card-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
-    --input-bg: #d9e7e9;
-    --btn-save: #92e6eb;
-    --btn-delete: #d9d9d9;
-    --text-main: #333333;
-    --accent-blue: #00bcd4;
+
+body { 
+    font-family: 'Open Sans', sans-serif; 
+    background-color: var(--bg); 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    color: var(--diab-dark);
 }
+/* --- HEADER ORIGINAL --- */
+.navbar {
+    background-color : white;
+    padding: 8px 30px;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar-content {
+    max-width: 1550px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-small { font-weight: 800; font-size: 1.6rem; letter-spacing: -1px; margin: 0; }
+.logo-small span { color: var(--primary); }
+
+.nav-search input {
+    background: #F0F4F8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 250px;
+    outline: none;
+}
+.nav-menu { display: flex; gap: 30px; }
+.nav-item {
+    text-decoration: none;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.65rem;
+    transition: 0.3s;
+}
+.nav-item i { font-size: 1.2rem; margin-bottom: 2px; }
+.nav-item.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+
+.user-section { display: flex; align-items: center; gap: 15px; }
+.user-card {
+    background: #F8F9FA;
+    padding: 5px 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user-text { text-align: right; }
+.user-name { display: block; font-size: 0.8rem; font-weight: bold; }
+.user-email { font-size: 0.65rem; opacity: 0.8; color: #64748b; }
+.user-avatar { 
+    width: 38px; height: 38px; 
+    border-radius: 20%; overflow: hidden;
+    background-color: #333; 
+}
+.user-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+
 
 .container {
     width: 95%;
@@ -200,10 +267,6 @@ display: flex;
     background-color: var(--btn-save);
     color: white;
     text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-}
-
-.navbar .active {
-    border-bottom: 4px solid var(--accent-blue);
 }
 
 /*sintomas*/
@@ -394,87 +457,8 @@ display: flex;
     }
 }
 
-/* --- NAVBAR IDÉNTICO FIGMA --- */
-.navbar {
-    background: white;
-    padding: 8px 30px;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-.navbar-content {
-    max-width: 1550px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.logo-small { font-weight: 800; font-size: 1.6rem; letter-spacing: -1px; }
-.logo-small span { color: var(--primary); }
 
-.nav-search input {
-    background: #F0F4F8;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    width: 250px;
-    outline: none;
-    margin-right: 100px;
-    margin-left: 100px;
-}
-.nav-menu { display: flex; gap: 50px; margin-right: 100px; }
-.nav-item {
-    text-decoration: none;
-    color: grey;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.65rem;
-    font-weight: 150;
-}
-.nav-item i { font-size: 1.2rem; margin-bottom: 2px; }
-.nav-item.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
-
-notification {
-    font-size: 1.2rem;
-    color: grey;
-    cursor: pointer;
-}
-
-.user-section { display: flex; align-items: center; gap: 20px; }
-.user-card {
-    background: #F8F9FA;
-    color: #1b1b1b;
-    padding: 5px 15px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.user-text { text-align: right; }
-.user-name { display: block; font-size: 0.8rem; font-weight: bold; }
-.user-email { font-size: 0.65rem; opacity: 0.8; }
-.user-avatar { 
-    width: 38px;           /* Tamaño ideal para que sea visible pero discreto */
-    height: 38px; 
-    border-radius: 20%;    /* El redondeado suave que se ve en Figma */
-    object-fit: cover;     /* Esto evita que la imagen se estire o se vea mal */
-    background-color: #333; /* Fondo oscuro por si la imagen no carga */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;      /* Corta cualquier parte de la imagen fuera del radio */
-}
-
-/* Si dentro tienes una etiqueta <img> */
-.user-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* --- TU FOOTER --- */
+/* --- FOOTER ORIGINAL --- */
 .site-footer {
     padding: 2rem;
     border-top: 1px solid #eee;
@@ -492,6 +476,71 @@ notification {
 .footer-content .links a { margin-right: 15px; text-decoration: none; color: #A0A0A0; }
 .social-icons i { margin-left: 15px; font-size: 1.2rem; cursor: pointer; color: #A0A0A0; }
 
-@media (max-width: 1024px) {
-    .dashboard-container { grid-template-columns: 1fr; }
+
+@media (max-width: 768px) {
+
+    /* Limpia superior*/
+    .navbar {
+        padding: 10px 15px; /* Reducimos padding lateral */
+    }
+    
+    .navbar-content {
+        /* Mantenemos logo a la izq y usuario a la derecha */
+        justify-content: space-between; 
+    }
+
+    /* 2. Transformamos el Menú en una Barra Inferior */
+    .nav-menu {
+        position: fixed;      /* Lo sacamos del flujo normal y lo fijamos */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 10px 0 15px 0; /* Padding extra abajo para iPhones modernos */
+        z-index: 2000;        /* Por encima de todo */
+        justify-content: space-around; /* Distribución uniforme */
+        gap: 0;               /* Quitamos el gap original */
+        border-top: 1px solid #eee;
+    }
+
+    /* 3. Estilizamos los Ítems de la barra inferior */
+    .nav-item {
+        font-size: 0.7rem;    /* Texto pequeñito */
+        flex: 1;              /* Que ocupen el mismo ancho */
+        padding: 5px;
+
+        position: relative;
+    }
+
+    .nav-item i {
+        font-size: 1.4rem;    /* Iconos más grandes para el dedo */
+        margin-bottom: 4px;
+        color: var(--text-gray);
+    }
+
+    /* Estado Activo en Móvil (Color + pequeña animación) */
+    .nav-item.active {
+        color: var(--primary);
+        font-weight: 700;
+    }
+    
+    .nav-item.active i {
+        color: var(--primary);
+        transform: translateY(-2px);
+    }
+    
+    .user-card {
+        padding: 0;           /* Quitamos padding extra */
+        background: transparent;
+    }
+    
+    .user-avatar {
+        width: 32px; height: 32px; /* Avatar un pelín más chico */
+    }
+
+    /* 6. IMPORTANTE: Espacio al final de la web */
+    /* Para que la barra inferior no tape el último contenido */
+    body {
+        padding-bottom: 80px; 
+    }
 }
