@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DiabTrack - Síntomas</title>
-    <link rel="stylesheet" href="css/signos1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/ingresar.css">
 </head>
 <body>
 
-   <header class="navbar">
+    <header class="navbar">
         <div class="navbar-content">
-            <h2 class="logo-small">D<span>ia</span>bTrack</h2>
-            
-            <div class="nav-search">
-                <input type="text" placeholder="Buscar...">
+            <div class="brand-area">
+                <h2 class="logo-small">D<span>ia</span>bTrack</h2>
             </div>
             
+            <div class="nav-search d-none d-lg-block">
+                <input type="text" class="form-control" placeholder="Buscar...">
+            </div>
+
             <nav class="nav-menu">
-                <a href="dashboardc.html" class="nav-item">
+                <a href="dashboardc.html" class="nav-item ">
                     <i class="fa-solid fa-house"></i>
                     <span>Inicio</span>
                 </a>
-                <a href="resumen.html" class="nav-item">
+                <a href="visualizacion.html" class="nav-item">
                     <i class="fa-solid fa-chart-column"></i>
                     <span>Resumen</span>
                 </a>
@@ -33,11 +36,11 @@
             </nav>
 
             <div class="user-section">
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item me-3">
                     <i class="fa-solid fa-bell notification"></i>
                 </a>
                 <div class="user-card">
-                    <div class="user-text">
+                    <div class="user-text d-none d-sm-block">
                         <span class="user-name">Angelom091</span>
                         <span class="user-email">UnoDos@demo.com</span>
                     </div>
@@ -53,10 +56,10 @@
         <h1>Registro de Datos</h1>
 
         <section class="categories">
-            <button type="button" class="card">Signos Vitales</button>
-            <button type="button" class="card active-card">Síntomas</button>
-            <button type="button" class="card">Nutrición</button>
-            <button type="button" class="card">Movimiento</button>
+            <a href="signos.html" class="card">Signos Vitales</a>
+            <a href="sintomas.html" class="card">Síntomas</a>
+            <a href="nutricion.html" class="card">Nutrición</a>
+            <a href="movimiento.html" class="card active-card">Movimiento</a>
         </section>
 
         <form class="symptoms-layout">
