@@ -12,61 +12,6 @@ body {
     flex-direction: column;
 }
 
-/* Navbar Superior */
-.navbar {
-    background: white;
-    padding: 10px 0px;
-    border-bottom: 1px solid #eee;
-    width: 100%;
-}
-
-.navbar-content {
-    max-width: 1600px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-small {
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.logo-small span { color: #00C2E0; }
-
-.nav-login-fields {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-login-fields input {
-    padding: 8px 12px;
-    border: 1px solid #BCE7EF;
-    border-radius: 8px;
-    background: #F0F7F8;
-    font-size: 0.85rem;
-    outline: none;
-}
-
-.btn-nav {
-    padding: 8px 12px;
-    color: white;
-    border: 1px solid #64E0E7;
-    border-radius: 8px;
-    background: #64E0E7;
-    font-size: 0.85rem;
-    outline: none;
-}
-
-.nav-link {
-    font-size: 0.7rem;
-    color: #00C2E0;
-    text-decoration: none;
-}
-
-/* contenedor principal general */
 .main-container {
     flex: 1;
     display: flex;
@@ -78,7 +23,6 @@ body {
     width: 100%;
 }
 
-/* Logo y desripicon*/
 .brand-section {
     max-width: 450px;
 }
@@ -104,7 +48,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Tarjeta Central de olvide contrasema */
 .login-card {
     background: white;
     padding: 3rem;
@@ -115,12 +58,28 @@ body {
     border: 1px solid #f0f0f0;
 }
 
+.personal-form {
+    width: 100%;
+}
+
 .input-group {
     position: relative;
     margin-bottom: 1rem;
 }
 
-.input-group input {
+.field-label-top, 
+.field-label {
+    font-size: 0.8rem;
+    color: #A0A0A0;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input,
+.select-wrapper select, 
+.full-select, 
+.full-input,
+select option {
     width: 100%;
     padding: 12px 15px;
     background-color: #F0F7F8;
@@ -128,34 +87,56 @@ body {
     border-radius: 12px;
     outline: none;
     font-size: 1rem;
+    font-family: inherit;
+    color: #666666; 
 }
 
-.input-group i {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #A0A0A0;
+.input-group input:focus,
+.select-wrapper select:focus, 
+.full-select:focus, 
+.full-input:focus {
+    border-color: #00C2E0;
 }
 
-
-/* texto de ayuda abajo de el imput de correo*/
-.helper-text {
-    text-align: left;
-    margin-bottom: 1.5rem;
-    padding-left: 5px;
+.date-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.helper-text a {
+.select-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+.select-wrapper label {
     font-size: 0.75rem;
     color: #A0A0A0;
-    text-decoration: none;
 }
-/* Bnuestro boton principal */
+
+.gender-section { 
+    margin-bottom: 25px; 
+}
+
+.radio-group { 
+    display: flex; 
+    gap: 40px; 
+    margin-top: 5px; 
+}
+
+.custom-radio {
+    font-size: 0.85rem;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
 .btn-primary {
     width: 100%;
     padding: 14px;
-    background: #64E0E7;
+    background: #64E0E7;    
     border: none;
     border-radius: 12px;
     color: white;
@@ -163,25 +144,21 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(100, 224, 231, 0.3);
     font-size: 1.1rem;
+    font-family: inherit;
+    transition: transform 0.2s, opacity 0.2s;
+    margin-top: 10px;
 }
 
-.footer-link {
-    text-align: center;
-    font-size: 0.8rem;
-    color: #A0A0A0;
-    margin-top: 1rem;
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
-.footer-link a {
-    color: #00C2E0;
-    text-decoration: none;
-}
-
-/* Footer */
 .site-footer {
     padding: 2rem;
     border-top: 1px solid #eee;
     background: white;
+    margin-top: auto;
 }
 
 .footer-content {

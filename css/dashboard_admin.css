@@ -1,32 +1,48 @@
+/* =========================================
+   VARIABLES
+========================================= */
 :root {
     --primary: #00A9CE; 
     --bg-light: #F4F7F6;
+    --bg-body: #f0f2f5;
     --text-dark: #333;
     --card-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
+/* =========================================
+   BASE
+========================================= */
 * { 
     box-sizing: border-box; 
-    margin: 0; padding: 0; 
+    margin: 0; 
+    padding: 0; 
 }
 
 body { 
     font-family: 'Open Sans', sans-serif; 
-    background-color: #f0f2f5; 
+    background-color: var(--bg-body); 
+    color: var(--text-dark);
     min-height: 100vh; 
     display: flex; 
     flex-direction: column; 
 }
 
+/* =========================================
+   HEADER / NAVBAR
+========================================= */
 .navbar { 
     background: white; 
-    padding: 8px 30px; border-bottom: 1px solid #eee; 
-    position: sticky; top: 0; z-index: 1000; 
+    padding: 8px 30px; 
+    border-bottom: 1px solid #eee; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
 }
 
 .navbar-content { 
     max-width: 1550px; 
-    margin: 0 auto; display: flex; 
+    margin: 0 auto; 
+    display: flex; 
     align-items: center; 
     justify-content: space-between; 
 }
@@ -37,7 +53,9 @@ body {
     letter-spacing: -1px; 
 }
 
-.logo-small span { color: var(--primary); }
+.logo-small span { 
+    color: var(--primary); 
+}
 
 .nav-search input { 
     background: #F0F4F8; 
@@ -52,8 +70,7 @@ body {
 .nav-menu { 
     display: flex; 
     gap: 40px; 
-    margin-right: auto; 
-    margin-left: auto;
+    margin: 0 auto; 
 }
 
 .nav-item { 
@@ -64,7 +81,7 @@ body {
     align-items: center; 
     font-size: 0.65rem; 
     font-weight: 500; 
-    transition: color 0.3s; 
+    transition: color 0.3s ease; 
 }
 
 .nav-item i { 
@@ -72,7 +89,10 @@ body {
     margin-bottom: 4px; 
 }
 
-.nav-item:hover, .nav-item.active { color: var(--primary); }
+.nav-item:hover, 
+.nav-item.active { 
+    color: var(--primary); 
+}
 
 .user-section { 
     display: flex; 
@@ -124,6 +144,9 @@ body {
     object-fit: cover; 
 }
 
+/* =========================================
+   MAIN CONTAINER & ADMIN PANEL
+========================================= */
 .main-container {
     padding: 40px 20px;
     max-width: 1400px;
@@ -149,20 +172,23 @@ body {
 .large-search-input {
     width: 100%;
     max-width: 800px;
-    background: #F5F5F5;
+    background: var(--bg-light);
     border: none;
     padding: 15px 30px;
     border-radius: 30px;
     font-size: 1rem;
     color: #666;
     outline: none;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s ease;
 }
 
 .large-search-input:focus {
     box-shadow: 0 0 0 2px var(--primary);
 }
 
+/* =========================================
+   GRID & CARDS
+========================================= */
 .admin-grid {
     display: flex;
     flex-wrap: wrap;
@@ -188,8 +214,8 @@ body {
     justify-content: center;
     gap: 20px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .admin-card:hover {
@@ -210,10 +236,14 @@ body {
     text-align: center;
 }
 
+/* =========================================
+   MEDIA QUERIES (MOBILE)
+========================================= */
 @media (max-width: 1024px) {
     .col-md-4 {
         width: 50%;
     }
+
     .admin-panel {
         padding: 30px;
     }
@@ -224,6 +254,7 @@ body {
         width: 100%;
     }
     
+    /* Apila el navbar y centra los elementos */
     .navbar-content {
         flex-direction: column;
         gap: 15px;
@@ -242,9 +273,9 @@ body {
     .admin-card {
         height: 180px; 
         flex-direction: row; 
-    .card-icon {
+    }
+
+    .admin-card .card-icon {
         font-size: 2.5rem;
     }
-}
-
 }

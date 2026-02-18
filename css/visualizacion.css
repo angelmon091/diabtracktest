@@ -23,7 +23,7 @@ body {
     flex-direction: column; 
     color: var(--diab-dark);
 }
-/* --- HEADER ORIGINAL --- */
+/* --- HEADER --- */
 .navbar {
     background-color : white;
     padding: 8px 30px;
@@ -42,6 +42,16 @@ body {
 }
 .logo-small { font-weight: 800; font-size: 1.6rem; letter-spacing: -1px; margin: 0; }
 .logo-small span { color: var(--primary); }
+.logo-small {
+    text-decoration: none; 
+    color: inherit;      
+    display: inline-block; 
+}
+
+.logo-small:hover {
+    text-decoration: none; 
+    opacity: 0.8;         
+}
 
 .nav-search input {
     background: #F0F4F8;
