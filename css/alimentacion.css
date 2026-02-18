@@ -46,6 +46,16 @@ body {
 }
 .logo-small { font-weight: 800; font-size: 1.6rem; letter-spacing: -1px; margin: 0; }
 .logo-small span { color: var(--primary); }
+.logo-small {
+    text-decoration: none; 
+    color: inherit;      
+    display: inline-block; 
+}
+
+.logo-small:hover {
+    text-decoration: none; 
+    opacity: 0.8;         
+}
 
 .nav-search input {
     background: #F0F4F8;
@@ -276,17 +286,70 @@ body {
 .footer-content .links a { margin-right: 15px; text-decoration: none; color: #A0A0A0; }
 .social-icons i { margin-left: 15px; font-size: 1.2rem; cursor: pointer; color: #A0A0A0; }
 
-/* --- UTILIDADES Y RESPONSIVIDAD --- */
-.extra-small { font-size: 0.75rem; }
-
-@media (max-width: 1024px) {
-    .nav-search { display: none; }
-    .nav-menu { gap: 15px; }
-}
-
 @media (max-width: 768px) {
-    .navbar-content { padding: 5px 10px; }
-    .logo-small { font-size: 1.3rem; }
-    .nav-item span { display: none; } /* Oculta texto de iconos en móvil */
-    .glass-card { padding: 1.5rem !important; }
+
+    /* Limpia superior*/
+    .navbar {
+        padding: 10px 15px; /* Reducimos padding lateral */
+    }
+    
+    .navbar-content {
+        /* Mantenemos logo a la izq y usuario a la derecha */
+        justify-content: space-between; 
+    }
+
+    /* 2. Transformamos el Menú en una Barra Inferior */
+    .nav-menu {
+        position: fixed;      /* Lo sacamos del flujo normal y lo fijamos */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 10px 0 15px 0; /* Padding extra abajo para iPhones modernos */
+        z-index: 2000;        /* Por encima de todo */
+        justify-content: space-around; /* Distribución uniforme */
+        gap: 0;               /* Quitamos el gap original */
+        border-top: 1px solid #eee;
+    }
+
+    /* 3. Estilizamos los Ítems de la barra inferior */
+    .nav-item {
+        font-size: 0.7rem;    /* Texto pequeñito */
+        flex: 1;              /* Que ocupen el mismo ancho */
+        padding: 5px;
+
+        position: relative;
+    }
+
+    .nav-item i {
+        font-size: 1.4rem;    /* Iconos más grandes para el dedo */
+        margin-bottom: 4px;
+        color: var(--text-gray);
+    }
+
+    /* Estado Activo en Móvil (Color + pequeña animación) */
+    .nav-item.active {
+        color: var(--primary);
+        font-weight: 700;
+    }
+    
+    .nav-item.active i {
+        color: var(--primary);
+        transform: translateY(-2px);
+    }
+    
+    .user-card {
+        padding: 0;           /* Quitamos padding extra */
+        background: transparent;
+    }
+    
+    .user-avatar {
+        width: 32px; height: 32px; /* Avatar un pelín más chico */
+    }
+
+    /* 6. IMPORTANTE: Espacio al final de la web */
+    /* Para que la barra inferior no tape el último contenido */
+    body {
+        padding-bottom: 80px; 
+    }
 }
