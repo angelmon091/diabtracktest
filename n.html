@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiabTrack - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="n.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="main-header shadow-sm bg-white">
+        <div class="container d-flex justify-content-between align-items-center py-2">
+            <h1 class="logo-small mb-0">D<span>ia</span>bTrack</h1>
+            
+            <nav class="nav-menu d-none d-md-flex gap-4">
+                <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-chart-line"></i> Resumen</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-plus"></i> Nuevo</a>
+            </nav>
+
+            <div class="user-profile d-flex align-items-center gap-3">
+                <i class="fa-regular fa-bell"></i>
+                <div class="user-info d-none d-sm-block text-end">
+                    <span class="user-name">Angelom091</span>
+                    <span class="user-email">UnoDos@demo.com</span>
+                </div>
+                <div class="avatar">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="Avatar" class="img-fluid"> 
+                </div>
+            </div>
+        </div>
+    </header>
+        <div class="container py-5">
+    <div class="glass-panel shadow-lg">
+        
+        <div class="header-section mb-4">
+            <h3 class="fw-bold"></i> Configuración de Alimentación IA</h3>
+            <p class="text-muted">Personaliza tu perfil para optimizar las recomendaciones nutricionales.</p>
+        </div>
+
+        <form>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="form-card">
+                        <label class="form-label-ia"></i>Comidas favoritas</label>
+                        <textarea class="form-control-ia" rows="3" placeholder="Ej: Pescado a la plancha, ensalada César, caldos..."></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-card card-dislike">
+                        <label class="form-label-ia"></i>Alimentos que no consumo / No me gustan</label>
+                        <textarea class="form-control-ia" rows="3" placeholder="Ej: Hígado, cebolla cruda, berenjena..."></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-card">
+                        <label class="form-label-ia"></i>Alergias médicas</label>
+                        <input type="text" class="form-control-ia" placeholder="Ej: Celíaco, intolerante a la lactosa">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-card">
+                        <label class="form-label-ia"></i>Preferencia de Carbos</label>
+                        <select class="form-select-ia">
+                            <option selected>Balanceado (Estándar)</option>
+                            <option>Bajo en carbohidratos (Low Carb)</option>
+                            <option>Sin arroz / Sin pastas</option>
+                            <option>Sustitución por legumbres</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4 d-grid">
+                    <button type="submit" class="btn-ia-submit"></i>Guardar Preferencias
+                    </button>
+                </div>
+            </div>
+        </form>
+
+ 
+    <main class="container my-4">
+        
+        <section class="content-card carrousel-section mb-4">
+            <h2 class="section-title">Alimentación Con IA</h2>
+            <hr class="divider">
+
+            <div id="foodCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-3">
+                            <div class="col-4"><div class="food-card"><img src="https://mirecetafacil.com/wp-content/uploads/2021/01/pollo-saludable-con-lechuga-y-aguacate.jpg" alt="Comida 1"></div></div>
+                            <div class="col-4"><div class="food-card"><img src="https://thumbs.dreamstime.com/b/plato-de-cena-diab%C3%A9tico-equilibrado-con-prote%C3%ADna-verduras-y-granos-para-una-alimentaci%C3%B3n-saludable-un-controlado-en-parte-394989319.jpg" alt="Comida 2"></div></div>
+                            <div class="col-4"><div class="food-card"><img src="https://foodsmartcolorado.colostate.edu/wp-content/uploads/2020/01/Screenshot-50.png" alt="Comida 3"></div></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row g-3">
+                            <div class="col-4"><div class="food-card"><img src="https://foodsmartcolorado.colostate.edu/wp-content/uploads/2020/01/Screenshot-50.png" alt="Comida 3"></div></div>
+                            <div class="col-4"><div class="food-card"><img src="https://mirecetafacil.com/wp-content/uploads/2021/01/pollo-saludable-con-lechuga-y-aguacate.jpg" alt="Comida 1"></div></div>
+                            <div class="col-4"><div class="food-card"><img src="https://thumbs.dreamstime.com/b/plato-de-cena-diab%C3%A9tico-equilibrado-con-prote%C3%ADna-verduras-y-granos-para-una-alimentaci%C3%B3n-saludable-un-controlado-en-parte-394989319.jpg" alt="Comida 2"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#foodCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#foodCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="carousel-indicators position-relative mt-3">
+                    <button type="button" data-bs-target="#foodCarousel" data-bs-slide-to="0" class="active dot"></button>
+                    <button type="button" data-bs-target="#foodCarousel" data-bs-slide-to="1" class="dot"></button>
+                </div>
+            </div>
+
+            <button class="btn btn-ia w-100 mt-3">Generar Recomendación IA</button>
+        </section>
+
+        <section class="content-card stats-section">
+            <h2 class="section-title">Aspectos Importantes</h2>
+            
+            <div class="row g-4">
+                <div class="col-12 col-lg-4">
+                    <div class="metric-card h-100">
+                        <div class="metric-header">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.t0oNlqrCS7rlj0eHtlbEtgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3L" alt="Calorías" class="metric-icon">
+                            <span>Calorías</span>
+                        </div>
+                        <div class="metric-value">
+                            <span class="big-num">2500</span> <span class="goal">/8000kcal</span>
+                        </div>
+                        <div class="metric-footer">
+                            <span class="week-label">This Month: </span>
+                            <span class="week-value">1386 kcal</span>
+                        </div>
+                        <div class="bar-chart mt-3">
+                            <div class="bar"></div><div class="bar"></div><div class="bar active"></div><div class="bar"></div><div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="metric-card h-100">
+                        <div class="metric-header">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.HP-u9oThjEctzwLpWSmCAwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Moving" class="metric-icon">
+                            <span>Moving</span>
+                        </div>
+                        <div class="metric-value">
+                            <span class="big-num">450</span> <span class="goal">/30 min</span>
+                        </div>
+                        <div class="metric-footer">
+                            <span class="week-label">This Month</span>
+                            <span class="week-value">15 Times</span>
+                        </div>
+                        <div class="dot-chart mt-3">
+                            <div class="activity-dots">
+                                <span class="a-dot"></span><span class="a-dot"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot"></span>
+                                <span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot"></span><span class="a-dot orange"></span><span class="a-dot orange"></span>
+                                <span class="a-dot"></span><span class="a-dot"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot orange"></span><span class="a-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="metric-card h-100">
+                        <div class="metric-header">
+                            <img src="https://th.bing.com/th/id/R.5470a5065e993c5c5eb8be13f0f55e5f?rik=515%2f3iYc6fUCWg&pid=ImgRaw&r=0" alt="Steps" class="metric-icon">
+                            <span>Steps</span>
+                        </div>
+                        <div class="metric-value">
+                            <span class="big-num">1876</span> <span class="goal">/8000Steps</span>
+                        </div>
+                        <div class="metric-footer">
+                            <span class="week-label">Today</span>
+                            <span class="week-value">12,450 Steps</span>
+                        </div>
+                        <div class="circle-chart-container">
+                            <div class="circle-progress"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>>
