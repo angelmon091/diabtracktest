@@ -20,14 +20,22 @@ Se han creado y ejecutado las siguientes migraciones con una estructura profesio
 
 ## 🖥️ 3. Vistas y Controladores Implementados
 1. **Layout Maestro (`layouts/app.blade.php`)**: Estructura base basada en el diseño original. Incluye Navbar dinámica con nombre de usuario y botón de Logout.
-2. **Onboarding (`OnboardingController`)**:
+2. **Autenticación Personalizada**:
+   - Login: `resources/views/auth/login.blade.php` (basado en `singin.html`).
+   - Registro: `resources/views/auth/register.blade.php` (basado en `login.html`).
+   - Funcionalidad: Errores de validación, CSRF y redirecciones inteligentes configuradas.
+3. **Onboarding (`OnboardingController`)**:
    - Vista: `resources/views/onboarding/personal-data.blade.php` (antes `login_datos_personales.html`).
    - Funcionalidad: Guarda datos médicos iniciales en `patient_profiles`.
-3. **Dashboard (`DashboardController`)**:
+4. **Dashboard (`DashboardController`)**:
    - Vista: `resources/views/dashboard.blade.php` (antes `dashboardc.html`).
    - Funcionalidad: Muestra bienvenida personalizada y estructura base de métricas.
 
-## 📝 4. Próximos Pasos (Pendientes)
+## 🛠️ 4. Correcciones Técnicas Importantes
+- **Conexión MySQL:** Se corrigió el archivo `.env` para usar MySQL (`app_laravel`) en lugar de SQLite.
+- **Sincronización de Tablas:** Se ejecutó `migrate:fresh` para asegurar que las 15 tablas profesionales estén presentes en el servidor MySQL.
+
+## 📝 5. Próximos Pasos (Pendientes)
 1. **Módulo de Signos Vitales**: Convertir `signos.html` a Blade y conectar con `VitalSignController`.
 2. **Módulo de Síntomas**: Convertir `sintomas.html` y manejar la relación Many-to-Many.
 3. **Módulo de Nutrición**: Convertir `nutricion.html` y manejar datos JSON.
