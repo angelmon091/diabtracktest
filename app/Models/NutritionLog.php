@@ -27,4 +27,14 @@ class NutritionLog extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function scopeDelUsuario($query, $userId)
+    {
+        return $query->where('user_id', $userId);
+    }
+
+    public function scopeDeHoy($query)
+    {
+        return $query->whereDate('created_at', \Carbon\Carbon::today());
+    }
 }

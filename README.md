@@ -1,58 +1,97 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# DiabTrack - Sistema de Gestión de Salud para Diabéticos
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+DiabTrack es una aplicación web integral diseñada para ayudar a las personas con diabetes a llevar un control preciso y simplificado de su salud. Mediante el seguimiento de niveles de glucosa, nutrición con asistencia de IA y actividad física, la plataforma proporciona herramientas críticas para la toma de decisiones informadas sobre el bienestar personal.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tecnologías Utilizadas
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+El proyecto está construido sobre un stack moderno y escalable:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+*   **Backend:** [Laravel 11](https://laravel.com/) (PHP 8.2+) - Framework robusto para la lógica de negocio y APIs.
+*   **Frontend:** [Blade Templates](https://laravel.com/docs/blade) - Motor de plantillas dinámicas para la interfaz de usuario.
+*   **Estilos:** [Bootstrap 5.3](https://getbootstrap.com/) & **Vanilla CSS** - Diseño responsivo con un sistema de diseño (Design System) propio.
+*   **Gráficos:** [Chart.js](https://www.chartjs.org/) - Visualización interactiva de tendencias de glucosa y métricas.
+*   **Bundler:** [Vite](https://vitejs.dev/) - Gestión eficiente de activos (JS/CSS).
+*   **Base de Datos:** [MySQL](https://www.mysql.com/) - Almacenamiento relacional de perfiles, mediciones y registros nutricionales.
+*   **Autenticación:** [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze) - Implementación segura de registro, login y gestión de sesiones.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Funcionalidades Principales
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. Panel de Control (Dashboard)
+Visualización centralizada de la salud del usuario:
+*   **Métrica de Glucosa en Tiempo Real:** Muestra la última medición con indicadores visuales de estado (Normal, Elevado, Bajo).
+*   **Gráfico de Tendencias:** Seguimiento semanal interactivo de los niveles de glucosa.
+*   **Estimación de A1c:** Cálculo proyectado del promedio de hemoglobina glicosilada.
+*   **Progreso Diario:** Barras dinámicas de cumplimiento de metas en Calorías, Actividad Física y Pasos.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### 2. Gestión de Registros (Tracking)
+*   **Signos Vitales:** Registro manual de glucosa, presión arterial y peso.
+*   **Nutrición Asistida:** Seguimiento de ingesta calórica y carbohidratos.
+*   **Actividad Física:** Registro de minutos de ejercicio diarios.
 
-## Agentic Development
+### 3. Sistema de Usuarios
+*   **Perfiles de Paciente:** Configuración de metas personalizadas (pasos, calorías, minutos de actividad).
+*   **Roles y Permisos:** Sistema preparado para administración y vista de paciente.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+---
 
-```bash
-composer require laravel/boost --dev
+## Flujos del Sistema
 
-php artisan boost:install
-```
+### Flujo de Usuario (Paciente)
+1.  **Registro/Onboarding:** El usuario crea una cuenta y completa su perfil médico con sus metas personalizadas.
+2.  **Registro Diario:** El usuario ingresa sus niveles de glucosa después de las comidas o en ayunas.
+3.  **Monitoreo:** El sistema actualiza automáticamente el Dashboard, alertando si los niveles están fuera de rango.
+4.  **Ajuste:** Basado en los gráficos y el "Tip del Día", el usuario ajusta su dieta o actividad.
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### Flujo de Datos
+*   **Entrada:** Formulario de registro -> Validación (Requests) -> Almacenamiento (Models).
+*   **Procesamiento:** `DashboardMetricsService` calcula promedios, porcentajes de metas y tendencias semanales.
+*   **Salida:** Vistas Blade inyectan datos dinámicos en componentes de Chart.js y barras de progreso CSS.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Instalación y Configuración
 
-## Code of Conduct
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone https://github.com/tu-usuario/diabtrack.git
+    cd diabtrack
+    ```
+2.  **Instalar dependencias de PHP:**
+    ```bash
+    composer install
+    ```
+3.  **Instalar dependencias de Frontend:**
+    ```bash
+    npm install
+    ```
+4.  **Configurar el entorno:**
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+5.  **Migrar y Sembrar la Base de Datos:**
+    ```bash
+    php artisan migrate --seed
+    ```
+6.  **Compilar activos y ejecutar:**
+    ```bash
+    npm run dev
+    # En otra terminal:
+    php artisan serve
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## Estructura del Proyecto
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+*   `app/Http/Controllers/Tracking`: Controladores para el registro de datos.
+*   `app/Services`: Lógica de cálculo de métricas (DashboardMetricsService).
+*   `resources/css/design-system.css`: Estándares visuales unificados.
+*   `resources/views/layouts/app.blade.php`: Layout base con menú responsivo inteligente.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+© 2026 DiabTrack App. Cuidando tu salud.

@@ -3,7 +3,7 @@
 @section('title', 'DiabTrack - Registro de Síntomas')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/tracking.css') }}">
+    @vite('resources/css/tracking.css')
 @endsection
 
 @section('content')

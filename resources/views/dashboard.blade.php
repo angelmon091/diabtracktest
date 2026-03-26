@@ -9,7 +9,7 @@
             <aside class="col-12 col-xl-3">
                 <div class="diab-card p-4 mb-4 shadow-sm animate-fade-in">
                     <div class="tool-header mb-4 d-flex align-items-center text-diab-primary">
-                        <i class="fa-solid fa-gear me-2"></i>
+                        <!--<i class="fa-solid fa-gear me-2"></i>-->
                         <span class="fw-bold">Gestión DiabTrack</span>
                     </div>
 

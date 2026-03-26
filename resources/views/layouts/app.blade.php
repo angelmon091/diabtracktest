@@ -1,66 +1,68 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <title>@yield('title', 'DiabTrack - Dashboard')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('css/design-system.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/dashboardc.css') }}">
+    @vite(['resources/css/design-system.css', 'resources/css/dashboardc.css', 'resources/js/app.js'])
     @yield('styles')
 </head>
-<body class="animate-fade-in">
+<body class="">
+    <div class="animate-fade-in">
+        <header class="navbar shadow-sm border-bottom glass-effect sticky-top py-2">
+            <div class="navbar-content container-fluid px-md-5 d-flex justify-content-between align-items-center">
+                <a href="{{ route('dashboard') }}" class="diab-logo text-decoration-none">
+                    D<span>ia</span>bTrack
+                </a>
+                
+                <div class="nav-search d-none d-lg-block">
+                    <input type="text" class="form-control" placeholder="Buscar...">
+                </div>
 
-    <header class="navbar shadow-sm border-bottom glass-effect sticky-top py-2">
-        <div class="navbar-content container-fluid px-md-5">
-            <a href="{{ route('dashboard') }}" class="diab-logo text-decoration-none">
-                D<span>ia</span>bTrack
-            </a>
-            
-            <div class="nav-search d-none d-lg-block">
-                <input type="text" class="form-control" placeholder="Buscar...">
-            </div>
+                <!-- Desktop Navigation (hidden on mobile via CSS) -->
+                <nav class="nav-menu d-none d-md-flex">
+                    <a href="{{ route('dashboard') }}" class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <a href="{{ route('dashboard') }}" class="nav-item">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <span>Resumen</span>
+                    </a>
+                    <a href="{{ route('tracking.vital.create') }}" class="nav-item {{ request()->routeIs('tracking.*') ? 'active' : '' }}">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Nuevo</span>
+                    </a>
+                </nav>
 
-            <nav class="nav-menu">
-                <a href="{{ route('dashboard') }}" class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                    <i class="fa-solid fa-house"></i>
-                    <span>Inicio</span>
-                </a>
-                <a href="{{ route('dashboard') }}" class="nav-item">
-                    <i class="fa-solid fa-chart-column"></i>
-                    <span>Resumen</span>
-                </a>
-                <a href="{{ route('tracking.vital.create') }}" class="nav-item {{ request()->routeIs('tracking.*') ? 'active' : '' }}">
-                    <i class="fa-solid fa-plus"></i>
-                    <span>Nuevo</span>
-                </a>
-            </nav>
-
-            <div class="user-section d-flex align-items-center">
-                <a href="#" class="nav-item me-3 text-muted">
-                    <i class="fa-solid fa-bell notification fs-5"></i>
-                </a>
-                <div class="user-card border bg-white shadow-sm p-1 ps-3 rounded-pill d-flex align-items-center">
-                    <div class="user-text d-none d-sm-block me-2">
-                        <span class="user-name fw-bold small d-block">{{ auth()->user()->name }}</span>
-                        <span class="user-email text-muted extra-small" style="font-size: 0.7rem;">{{ auth()->user()->email }}</span>
+                <div class="user-section d-flex align-items-center">
+                    <a href="#" class="nav-item me-3 text-muted">
+                        <i class="fa-solid fa-bell notification fs-5"></i>
+                    </a>
+                    <div class="user-card border bg-white shadow-sm p-1 ps-3 rounded-pill d-flex align-items-center">
+                        <div class="user-text d-none d-sm-block me-2">
+                            <span class="user-name fw-bold small d-block">{{ auth()->user()->name }}</span>
+                            <span class="user-email text-muted extra-small" style="font-size: 0.7rem;">{{ auth()->user()->email }}</span>
+                        </div>
+                        <div class="user-avatar rounded-circle overflow-hidden shadow-sm" style="width: 36px; height: 36px;">
+                            <img src="{{ asset('img/medios/etc/yo.jpg') }}" alt="User" class="w-100 h-100 object-fit-cover">
+                        </div>
+                        <form method="POST" action="{{ route('logout') }}" class="ms-2 pe-2 border-start ps-2">
+                            @csrf
+                            <button type="submit" class="btn btn-link p-0 text-danger" title="Cerrar Sesión">
+                                <i class="fa-solid fa-power-off"></i>
+                            </button>
+                        </form>
                     </div>
-                    <div class="user-avatar rounded-circle overflow-hidden shadow-sm" style="width: 36px; height: 36px;">
-                        <img src="{{ asset('img/medios/etc/yo.jpg') }}" alt="User" class="w-100 h-100 object-fit-cover">
-                    </div>
-                    <form method="POST" action="{{ route('logout') }}" class="ms-2 pe-2 border-start ps-2">
-                        @csrf
-                        <button type="submit" class="btn btn-link p-0 text-danger" title="Cerrar Sesión">
-                            <i class="fa-solid fa-power-off"></i>
-                        </button>
-                    </form>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    @yield('content')
+        @yield('content')
 
     <footer class="site-footer bg-white border-top py-5 mt-auto">
         <div class="container-fluid px-md-5">
@@ -86,6 +88,23 @@
             </div>
         </div>
     </footer>
+    </div>
+
+    <!-- Mobile Navigation (fixed bottom, shown only on mobile via CSS) -->
+    <nav class="nav-menu d-flex d-md-none">
+        <a href="{{ route('dashboard') }}" class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+        </a>
+        <a href="{{ route('dashboard') }}" class="nav-item">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Resumen</span>
+        </a>
+        <a href="{{ route('tracking.vital.create') }}" class="nav-item {{ request()->routeIs('tracking.*') ? 'active' : '' }}">
+            <i class="fa-solid fa-plus"></i>
+            <span>Nuevo</span>
+        </a>
+    </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     @yield('scripts')
