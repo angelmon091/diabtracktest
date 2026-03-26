@@ -56,6 +56,43 @@ body {
     color: var(--diab-text-secondary) !important;
 }
 
+.text-diab-danger {
+    color: var(--diab-danger) !important;
+}
+
+.text-diab-success {
+    color: var(--diab-primary) !important;
+}
+
+.text-diab-warning {
+    color: var(--diab-warning) !important;
+}
+
+.text-diab-info {
+    color: var(--diab-info) !important;
+}
+
+/* Background Helpers */
+.bg-diab-primary-light {
+    background-color: var(--diab-primary-light) !important;
+}
+
+.bg-diab-danger-light {
+    background-color: var(--diab-danger-light) !important;
+}
+
+.bg-diab-success-light {
+    background-color: var(--diab-success-light) !important;
+}
+
+.bg-diab-warning-light {
+    background-color: var(--diab-warning-light) !important;
+}
+
+.bg-diab-info-light {
+    background-color: var(--diab-info-light) !important;
+}
+
 .fw-semibold {
     font-weight: 600 !important;
 }

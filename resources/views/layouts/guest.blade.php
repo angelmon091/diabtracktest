@@ -19,7 +19,7 @@
     {{ $slot }}
 
     <footer class="site-footer">
-        <div class="footer-content">
+        <div class="footer-content"
             <div class="links">
                 <a href="#">{{ __('Políticas de Privacidad') }}</a>
                 <a href="#">{{ __('Términos y Condiciones') }}</a>
