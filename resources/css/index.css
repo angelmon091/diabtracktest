@@ -1,100 +1,124 @@
 /* =========================================
-   VARIABLES
+   DIABTRACK LANDING STYLES
+   Unified with Design System
 ========================================= */
+
+@import 'design-system.css';
+
 :root {
-    --primary: #4ed9e6;
-    --primary-hover: #3bc2cf;
+    --landing-primary: var(--diab-primary);
+    --landing-primary-hover: var(--diab-primary-hover);
 }
 
 body {
-    font-family: 'Open Sans', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--diab-bg);
 }
 
 /* =========================================
    NAVBAR CUSTOMIZATION
 ========================================= */
+.navbar {
+    transition: var(--diab-transition);
+}
+
 .navbar-nav .nav-link {
-    transition: color 0.3s ease;
+    color: var(--diab-white) !important;
+    font-weight: 500;
+    transition: var(--diab-transition);
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--primary) !important;
-}
-
-.bg-md-transparent {
-    background-color: transparent !important;
+    color: var(--diab-accent) !important;
+    transform: translateY(-1px);
 }
 
 /* =========================================
    HERO SECTION
 ========================================= */
 .hero {
-    min-height: 90vh; 
-    /* El degradado negro (rgba) asegura que el texto blanco siempre se lea bien */
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
-                url('https://www.accu-chek.com.mx/sites/g/files/iut326/f/article_images/rdc_blog_nota01_03.png') no-repeat center center;
+    min-height: 95vh;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.4) 100%), 
+                url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
     background-size: cover;
-    padding-top: 80px; 
-    color: white;
+    display: flex;
+    align-items: center;
+    color: var(--diab-white);
+    padding-top: 100px;
 }
 
-/* FIX: El !important asegura que no se ponga blanco en dispositivos móviles */
+.hero-title {
+    font-size: 4.5rem;
+    letter-spacing: -2px;
+}
+
 .hero-title span {
-    color: var(--primary) !important;
+    color: var(--diab-primary) !important;
 }
 
 .btn-acceder {
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--diab-primary) 0%, var(--diab-primary-hover) 100%);
     color: white;
-    transition: all 0.3s ease;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    transition: var(--diab-transition);
 }
 
 .btn-acceder:hover {
-    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -5px rgba(0, 180, 216, 0.4);
     color: white;
-    transform: translateY(-2px);
+    filter: brightness(1.1);
 }
 
 /* =========================================
-   FEATURES CUSTOMIZATION
+   FEATURES SECTION
 ========================================= */
+.features {
+    padding: 100px 0;
+    background: var(--diab-white);
+}
+
 .features-title {
-    color: #7abcc7;
+    color: var(--diab-text);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.service-item {
+    background: var(--diab-bg);
+    padding: 3rem 2rem;
+    border-radius: var(--diab-radius);
+    transition: var(--diab-transition);
+    border: 1px solid rgba(0,0,0,0.03);
+    height: 100%;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--diab-shadow-hover);
+    background: white;
 }
 
 .service-item img {
-    max-width: 120px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.service-item:hover img {
-    opacity: 1;
+    max-width: 80px;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 5px 10px rgba(0, 180, 216, 0.2));
 }
 
 /* =========================================
-   FOOTER CUSTOMIZATION
+   FOOTER
 ========================================= */
+.site-footer {
+    background: var(--diab-white);
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
 .site-footer a {
-    transition: color 0.3s ease;
+    color: var(--diab-text-secondary);
+    transition: var(--diab-transition);
 }
 
 .site-footer a:hover {
-    color: var(--primary) !important;
-}
-
-/* =========================================
-   MEDIA QUERIES EXTRAS
-========================================= */
-@media (max-width: 768px) {
-    #menuPrincipal {
-        background-color: rgba(0, 0, 0, 0.85);
-        border-radius: 10px;
-        padding: 10px;
-        margin-top: 15px;
-    }
-    .hero-title span {
-    color: var(--primary) !important;
-    }
-
+    color: var(--diab-primary) !important;
 }
