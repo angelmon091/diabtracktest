@@ -41,10 +41,12 @@
 /* Base Styles */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--diab-bg);
+    background: linear-gradient(135deg, #f5f5f5 0%, #e2e8f0 100%);
+    background-attachment: fixed;
     color: var(--diab-text);
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.01em;
+    min-height: 100vh;
 }
 
 /* Typography Helpers */
@@ -103,14 +105,34 @@ body {
 
 /* Unified Card System */
 .diab-card {
-    background: var(--diab-card-bg);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: var(--diab-radius);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    box-shadow: var(--diab-shadow);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
     transition: var(--diab-transition);
     overflow: hidden;
 }
 
+.stat-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--diab-radius-sm);
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    height: 100%;
+    transition: var(--diab-transition);
+}
+
+.stat-card.border-4 {
+    border-width: 1px !important;
+    border-left-width: 6px !important;
+}
+
+.stat-card:hover,
 .diab-card-hover:hover {
     transform: translateY(-5px);
     box-shadow: var(--diab-shadow-hover);

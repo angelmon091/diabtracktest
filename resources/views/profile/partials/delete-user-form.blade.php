@@ -1,54 +1,59 @@
-<section class="space-y-6">
-    <header>
-        <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Delete Account') }}
-        </h2>
+<section>
+    <header class="mb-4">
+        <h3 class="fw-bold text-dark fs-5">
+            {{ __('Eliminar Cuenta') }}
+        </h3>
 
-        <p class="mt-1 text-sm text-gray-600">
-            {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
+        <p class="mt-1 small text-muted">
+            {{ __('Una vez que tu cuenta sea eliminada, todos sus recursos y datos serán eliminados permanentemente. Antes de eliminar tu cuenta, por favor descarga cualquier información que desees conservar.') }}
         </p>
     </header>
 
-    <x-danger-button
+    <button 
+        class="btn btn-outline-danger rounded-pill px-4"
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
-    >{{ __('Delete Account') }}</x-danger-button>
+    >
+        <i class="fa-solid fa-triangle-exclamation me-2"></i> {{ __('Eliminar mi Cuenta') }}
+    </button>
 
     <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
-        <form method="post" action="{{ route('profile.destroy') }}" class="p-6">
+        <form method="post" action="{{ route('profile.destroy') }}" class="p-4 p-md-5">
             @csrf
             @method('delete')
 
-            <h2 class="text-lg font-medium text-gray-900">
-                {{ __('Are you sure you want to delete your account?') }}
+            <h2 class="fw-bold text-dark fs-4 mb-3">
+                {{ __('¿Estás seguro de que deseas eliminar tu cuenta?') }}
             </h2>
 
-            <p class="mt-1 text-sm text-gray-600">
-                {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+            <p class="text-muted mb-4">
+                {{ __('Esta acción no se puede deshacer. Por favor, introduce tu contraseña para confirmar que deseas eliminar permanentemente tu cuenta y todos tus datos de salud asociados.') }}
             </p>
 
-            <div class="mt-6">
-                <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
+            <div class="mb-4">
+                <label for="password" class="form-label small fw-bold text-muted text-uppercase">{{ __('Contraseña') }}</label>
 
-                <x-text-input
+                <input
                     id="password"
                     name="password"
                     type="password"
-                    class="mt-1 block w-3/4"
-                    placeholder="{{ __('Password') }}"
+                    class="form-control"
+                    placeholder="{{ __('Contraseña de confirmación') }}"
                 />
 
-                <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+                @if($errors->userDeletion->has('password'))
+                    <span class="text-danger extra-small">{{ $errors->userDeletion->first('password') }}</span>
+                @endif
             </div>
 
-            <div class="mt-6 flex justify-end">
-                <x-secondary-button x-on:click="$dispatch('close')">
-                    {{ __('Cancel') }}
-                </x-secondary-button>
+            <div class="d-flex justify-content-end gap-3">
+                <button type="button" class="btn btn-light rounded-pill px-4" x-on:click="$dispatch('close')">
+                    {{ __('Cancelar') }}
+                </button>
 
-                <x-danger-button class="ms-3">
-                    {{ __('Delete Account') }}
-                </x-danger-button>
+                <button type="submit" class="btn btn-danger rounded-pill px-4 shadow-sm">
+                    {{ __('Eliminar de Forma Permanente') }}
+                </button>
             </div>
         </form>
     </x-modal>

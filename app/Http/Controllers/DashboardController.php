@@ -67,17 +67,17 @@ class DashboardController extends Controller
         // Obtener registros históricos para la vista detallada
         $vitalsHistory = \App\Models\VitalSign::where('user_id', $user->id)
             ->latest()
-            ->take(20)
+            ->take(30)
             ->get();
 
         $nutritionHistory = \App\Models\NutritionLog::where('user_id', $user->id)
             ->latest()
-            ->take(20)
+            ->take(30)
             ->get();
 
         $activityHistory = \App\Models\ActivityLog::where('user_id', $user->id)
             ->latest()
-            ->take(20)
+            ->take(30)
             ->get();
 
         $symptomsHistory = \Illuminate\Support\Facades\DB::table('symptom_user')
@@ -85,10 +85,34 @@ class DashboardController extends Controller
             ->where('symptom_user.user_id', $user->id)
             ->select('symptoms.name', 'symptoms.category', 'symptom_user.logged_at')
             ->latest('symptom_user.logged_at')
-            ->take(30)
+            ->take(50)
             ->get();
 
-        return view('tracking.summary', array_merge($metrics, compact(
+        // Métricas adicionales para el resumen profundo
+        $extraMetrics = [
+            'avgGlucose' => round($vitalsHistory->avg('glucose_level')),
+            'avgSystolic' => round($vitalsHistory->avg('systolic')),
+            'avgDiastolic' => round($vitalsHistory->avg('diastolic')),
+            'avgHeartRate' => round($vitalsHistory->avg('heart_rate')),
+            'totalWeight' => $user->patientProfile->weight ?? '--',
+            'symptomsCount' => $symptomsHistory->count(),
+            'medicationCount' => $nutritionHistory->whereNotNull('medication_taken')->count(),
+            'totalActivityMinutes' => $activityHistory->sum('duration_minutes'),
+        ];
+
+        // Preparar datos para gráfica de categorías de comida
+        $foodCategoryCounts = [];
+        foreach ($nutritionHistory as $log) {
+            if ($log->food_categories) {
+                foreach ($log->food_categories as $cat) {
+                    $foodCategoryCounts[$cat] = ($foodCategoryCounts[$cat] ?? 0) + 1;
+                }
+            }
+        }
+        $extraMetrics['foodCategoryLabels'] = array_keys($foodCategoryCounts);
+        $extraMetrics['foodCategoryData'] = array_values($foodCategoryCounts);
+
+        return view('tracking.summary', array_merge($metrics, $extraMetrics, compact(
             'vitalsHistory', 'nutritionHistory', 'activityHistory', 'symptomsHistory'
         )));
     }
