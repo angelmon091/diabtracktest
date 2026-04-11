@@ -1,0 +1,52 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: diabtrack-app
+    container_name: diabtrack-container
+    restart: unless-stopped
+    tty: true
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_KEY: base64:uSu6S801reK56Y6GZ+SmuE8y9p9vK9Y6uSu6S801reK=
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: diabtrack
+      DB_USERNAME: diabuser
+      DB_PASSWORD: diabpassword
+    ports:
+      - "8081:80"
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/node_modules # Evitar sobreescribir con locales vacíos
+      - /var/www/html/public/build # Evitar sobreescribir assets compilados con locales
+    depends_on:
+      - db
+    networks:
+      - diabtrack-network
+
+  db:
+    image: mysql:8.0
+    container_name: diabtrack-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: diabtrack
+      MYSQL_USER: diabuser
+      MYSQL_PASSWORD: diabpassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - diabtrack-db-data:/var/lib/mysql
+    networks:
+      - diabtrack-network
+
+networks:
+  diabtrack-network:
+    driver: bridge
+
+volumes:
+  diabtrack-db-data:

@@ -4,6 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="DiabTrack: La plataforma inteligente para el monitoreo de diabetes. Controla tu glucosa, nutrición y actividad con análisis de IA para una vida más saludable.">
+    <meta name="keywords" content="diabetes, monitoreo de salud, glucosa, insulina, salud inteligente, seguimiento médico, nutrición diabetes">
+    <meta name="author" content="DiabTrack">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:title" content="DiabTrack - Monitorea tu salud, vive mejor">
+    <meta property="og:description" content="Control inteligente de la diabetes con análisis de IA y monitoreo constante de signos vitales.">
+    <meta property="og:image" content="{{ asset('img/medios/logos/logo-social.png') }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ url('/') }}">
+    <meta property="twitter:title" content="DiabTrack - Monitorea tu salud, vive mejor">
+    <meta property="twitter:description" content="Control inteligente de la diabetes con análisis de IA y monitoreo constante de signos vitales.">
+    <meta property="twitter:image" content="{{ asset('img/medios/logos/logo-social.png') }}">
+
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
     <title>DiabTrack - Monitorea tu salud, vive mejor</title>
