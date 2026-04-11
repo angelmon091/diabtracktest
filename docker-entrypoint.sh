@@ -9,20 +9,22 @@ php artisan view:cache
 # Link storage
 php artisan storage:link --force
 
-# Wait for DB connection if using MySQL
-if [ "$DB_CONNECTION" = "mysql" ]; then
-    echo "Waiting for MySQL to be ready..."
+# Wait for DB connection
+if [ "$DB_CONNECTION" = "mysql" ] || [ "$DB_CONNECTION" = "pgsql" ]; then
+    echo "Waiting for $DB_CONNECTION to be ready..."
     max_tries=30
     count=0
-    until php -r "try { new PDO('mysql:host=$DB_HOST;port=$DB_PORT;dbname=$DB_DATABASE', '$DB_USERNAME', '$DB_PASSWORD'); } catch (Exception \$e) { exit(1); }" > /dev/null 2>&1; do
+    
+    # Generic PHP check using Laravel's config
+    until php -r "try { DB::connection()->getPdo(); exit(0); } catch (Exception \$e) { exit(1); }" > /dev/null 2>&1; do
         sleep 2
         count=$((count + 1))
         if [ $count -gt $max_tries ]; then
-            echo "Error: MySQL not ready after 60 seconds."
+            echo "Error: Database not ready after 60 seconds."
             exit 1
         fi
     done
-    echo "MySQL is ready!"
+    echo "Database is ready!"
 fi
 
 # Run migrations

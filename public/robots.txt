@@ -6,4 +6,4 @@ Disallow: /admin
 Disallow: /onboarding
 Disallow: /tracking
 
-Sitemap: {{ url('sitemap.xml') }}
+Sitemap: /sitemap.xml
