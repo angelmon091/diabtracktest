@@ -51,7 +51,14 @@ class DashboardController extends Controller
         // Obtener los datos procesados a través de la capa de servicios (Service Layer)
         $metrics = $this->metricsService->getDashboardMetrics($user->id);
 
-        return view('dashboard', $metrics);
+        // Obtener últimos 5 registros para llenar el espacio del dashboard
+        $recentLogs = \App\Models\VitalSign::where('user_id', $user->id)
+            ->whereNotNull('glucose_level')
+            ->latest()
+            ->take(5)
+            ->get();
+
+        return view('dashboard', array_merge($metrics, compact('recentLogs')));
     }
 
     /**

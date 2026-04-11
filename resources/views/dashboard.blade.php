@@ -201,81 +201,148 @@
                     </div>
                 </div>
 
-                {{-- Métricas Fusionadas --}}
+                {{-- Métricas Fusionadas - Rediseño Compacto --}}
                 <div class="row g-4 mb-4">
                     <!-- A1c + Calorías -->
                     <div class="col-12 col-md-4">
                         <div class="diab-card p-4 h-100 animate-fade-in" style="animation-delay: 0.3s;">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="act-icon me-3 fire"><i class="fa-solid fa-dna"></i></div>
-                                <div>
-                                    <span class="extra-small fw-bold text-muted text-uppercase">A1c Estimada</span>
-                                    <h3 class="fw-extrabold mb-0">{{ $ultimaHba1c ? number_format($ultimaHba1c->hba1c, 1) . '%' : '--' }}</h3>
+                            <div class="d-flex flex-column h-100 justify-content-between">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <span class="extra-small fw-bold text-muted text-uppercase letter-spacing-1 d-block mb-1">A1c Estimada</span>
+                                        <h3 class="fw-extrabold mb-0 text-dark">{{ $ultimaHba1c ? number_format($ultimaHba1c->hba1c, 1) . '%' : '--' }}</h3>
+                                    </div>
+                                    <div class="act-icon fire shadow-sm"><i class="fa-solid fa-dna"></i></div>
+                                </div>
+                                <div class="bg-light rounded-4 p-3 border border-white shadow-sm">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-bold extra-small text-diab-danger"><i class="fa-solid fa-fire me-1"></i> Calorías</span>
+                                        <span class="fw-bold extra-small text-dark">{{ $porcentajeCalorias }}%</span>
+                                    </div>
+                                    <div class="progress-container bg-white border mb-2" style="height: 5px;">
+                                        <div class="progress-bar-custom shadow-sm" style="width: {{ $porcentajeCalorias }}%; background: var(--diab-danger) !important;"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="text-muted" style="font-size: 0.65rem;">Hoy: <strong>{{ $caloriasHoy }}</strong></span>
+                                        <span class="text-muted" style="font-size: 0.65rem;">Meta: {{ $metaCalorias }}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <hr class="my-2 opacity-10">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div class="d-flex align-items-center">
-                                    <i class="fa-solid fa-fire text-diab-danger me-2"></i>
-                                    <span class="fw-bold extra-small">Calorías</span>
-                                </div>
-                                <span class="fw-bold extra-small text-diab-danger">{{ $porcentajeCalorias }}%</span>
-                            </div>
-                            <div class="progress-container shadow-sm border-0 mb-1" style="height: 6px;">
-                                <div class="progress-bar-custom shadow" style="width: {{ $porcentajeCalorias }}%; background-color: var(--diab-danger) !important;"></div>
-                            </div>
-                            <p class="text-muted extra-small mb-0 text-end">{{ $caloriasHoy }} / {{ $metaCalorias }} kcal</p>
                         </div>
                     </div>
 
                     <!-- Carbohidratos + Actividad -->
                     <div class="col-12 col-md-4">
                         <div class="diab-card p-4 h-100 animate-fade-in" style="animation-delay: 0.4s;">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="act-icon me-3 move"><i class="fa-solid fa-bread-slice"></i></div>
-                                <div>
-                                    <span class="extra-small fw-bold text-muted text-uppercase">Carbohidratos</span>
-                                    <h3 class="fw-extrabold mb-0">{{ $carbsHoy }}g</h3>
+                            <div class="d-flex flex-column h-100 justify-content-between">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <span class="extra-small fw-bold text-muted text-uppercase letter-spacing-1 d-block mb-1">Carbohidratos</span>
+                                        <h3 class="fw-extrabold mb-0 text-dark">{{ $carbsHoy }}g</h3>
+                                    </div>
+                                    <div class="act-icon move shadow-sm"><i class="fa-solid fa-bread-slice"></i></div>
+                                </div>
+                                <div class="bg-light rounded-4 p-3 border border-white shadow-sm">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-bold extra-small text-diab-warning"><i class="fa-solid fa-bolt me-1"></i> Actividad</span>
+                                        <span class="fw-bold extra-small text-dark">{{ $porcentajeActividad }}%</span>
+                                    </div>
+                                    <div class="progress-container bg-white border mb-2" style="height: 5px;">
+                                        <div class="progress-bar-custom shadow-sm" style="width: {{ $porcentajeActividad }}%; background: var(--diab-warning) !important;"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="text-muted" style="font-size: 0.65rem;">Hoy: <strong>{{ $actividadMinutos }}m</strong></span>
+                                        <span class="text-muted" style="font-size: 0.65rem;">Meta: {{ $metaActividad }}m</span>
+                                    </div>
                                 </div>
                             </div>
-                            <hr class="my-2 opacity-10">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div class="d-flex align-items-center">
-                                    <i class="fa-solid fa-bolt text-diab-warning me-2"></i>
-                                    <span class="fw-bold extra-small">Actividad</span>
-                                </div>
-                                <span class="fw-bold extra-small text-diab-warning">{{ $porcentajeActividad }}%</span>
-                            </div>
-                            <div class="progress-container shadow-sm border-0 mb-1" style="height: 6px;">
-                                <div class="progress-bar-custom shadow" style="width: {{ $porcentajeActividad }}%; background-color: var(--diab-warning) !important;"></div>
-                            </div>
-                            <p class="text-muted extra-small mb-0 text-end">{{ $actividadMinutos }} / {{ $metaActividad }} min</p>
                         </div>
                     </div>
 
                     <!-- Tiempo en Rango + Pasos -->
                     <div class="col-12 col-md-4">
                         <div class="diab-card p-4 h-100 animate-fade-in" style="animation-delay: 0.5s;">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="act-icon me-3 feet"><i class="fa-solid fa-clock-rotate-left"></i></div>
-                                <div>
-                                    <span class="extra-small fw-bold text-muted text-uppercase">Tiempo en Rango</span>
-                                    <h3 class="fw-extrabold mb-0">{{ $tiempoEnRango }}%</h3>
+                            <div class="d-flex flex-column h-100 justify-content-between">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <span class="extra-small fw-bold text-muted text-uppercase letter-spacing-1 d-block mb-1">Tiempo en Rango</span>
+                                        <h3 class="fw-extrabold mb-0 text-dark">{{ $tiempoEnRango }}%</h3>
+                                    </div>
+                                    <div class="act-icon feet shadow-sm"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                                </div>
+                                <div class="bg-light rounded-4 p-3 border border-white shadow-sm">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-bold extra-small text-diab-primary"><i class="fa-solid fa-shoe-prints me-1"></i> Pasos</span>
+                                        <span class="fw-bold extra-small text-dark">{{ $porcentajePasos }}%</span>
+                                    </div>
+                                    <div class="progress-container bg-white border mb-2" style="height: 5px;">
+                                        <div class="progress-bar-custom shadow-sm" style="width: {{ $porcentajePasos }}%; background: var(--diab-primary) !important;"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="text-muted" style="font-size: 0.65rem;">Hoy: <strong>{{ number_format($pasosEstimados) }}</strong></span>
+                                        <span class="text-muted" style="font-size: 0.65rem;">Meta: {{ number_format($metaPasos/1000, 1) }}k</span>
+                                    </div>
                                 </div>
                             </div>
-                            <hr class="my-2 opacity-10">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div class="d-flex align-items-center">
-                                    <i class="fa-solid fa-shoe-prints text-diab-primary me-2"></i>
-                                    <span class="fw-bold extra-small">Pasos Hoy</span>
-                                </div>
-                                <span class="fw-bold extra-small text-diab-primary">{{ $porcentajePasos }}%</span>
-                            </div>
-                            <div class="progress-container shadow-sm border-0 mb-1" style="height: 6px;">
-                                <div class="progress-bar-custom shadow" style="width: {{ $porcentajePasos }}%; background-color: var(--diab-primary) !important;"></div>
-                            </div>
-                            <p class="text-muted extra-small mb-0 text-end">{{ number_format($pasosEstimados) }} / {{ number_format($metaPasos) }}</p>
                         </div>
+                    </div>
+                </div>
+
+                {{-- Nueva Sección: Historial Reciente (Llena el espacio vacío) --}}
+                <div class="diab-card p-4 mb-4 animate-fade-in" style="animation-delay: 0.6s;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h6 class="fw-bold mb-0 text-diab-text-secondary text-uppercase letter-spacing-1" style="font-size: 0.8rem;">Últimas Mediciones de Glucosa</h6>
+                        <a href="{{ route('tracking.summary') }}" class="btn btn-link btn-sm text-diab-primary text-decoration-none fw-bold small">
+                            Ver historial completo <i class="fa-solid fa-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr style="font-size: 0.7rem; color: var(--diab-text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">
+                                    <th class="border-0 rounded-start px-4">Fecha y Hora</th>
+                                    <th class="border-0">Glucosa</th>
+                                    <th class="border-0">Momento</th>
+                                    <th class="border-0">HbA1c (%)</th>
+                                    <th class="border-0 rounded-end px-4 text-center">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($recentLogs ?? [] as $log)
+                                    <tr style="font-size: 0.85rem;">
+                                        <td class="px-4 text-dark fw-medium">
+                                            {{ $log->created_at->format('d M, Y') }} 
+                                            <span class="text-muted small ms-1">{{ $log->created_at->format('H:i') }}</span>
+                                        </td>
+                                        <td class="fw-extrabold text-dark">{{ $log->glucose_level }} <span class="text-muted fw-normal" style="font-size: 0.7rem;">mg/dL</span></td>
+                                        <td>
+                                            <span class="badge rounded-pill bg-light text-dark border px-3 py-2 fw-semibold" style="font-size: 0.7rem;">
+                                                <i class="fa-regular fa-clock me-1 text-diab-primary"></i> {{ $log->measurement_moment ?? 'Ayunas' }}
+                                            </span>
+                                        </td>
+                                        <td class="text-muted">{{ $log->hba1c ? $log->hba1c . '%' : '--' }}</td>
+                                        <td class="text-center">
+                                            @php
+                                                $statusClass = 'success';
+                                                $statusText = 'En Rango';
+                                                if($log->glucose_level > 140) { $statusClass = 'danger'; $statusText = 'Alto'; }
+                                                elseif($log->glucose_level < 70) { $statusClass = 'warning'; $statusText = 'Bajo'; }
+                                            @endphp
+                                            <span class="badge rounded-pill bg-{{ $statusClass }}-light text-{{ $statusClass }} px-3 py-2 border border-{{ $statusClass }} opacity-75" style="font-size: 0.7rem; min-width: 80px;">
+                                                <i class="fa-solid fa-circle me-1" style="font-size: 0.5rem;"></i> {{ $statusText }}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="5" class="text-center py-5">
+                                            <div class="act-icon gray mx-auto mb-3 shadow-sm"><i class="fa-solid fa-inbox"></i></div>
+                                            <p class="text-muted small mb-0">Aún no hay mediciones registradas</p>
+                                        </td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
