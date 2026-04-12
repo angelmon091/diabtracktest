@@ -138,6 +138,3 @@ class UserController extends Controller
         return redirect()->route('admin.users.index')->with('success', 'Usuario eliminado exitosamente.');
     }
 }
-ess', 'Usuario eliminado exitosamente.');
-    }
-}
