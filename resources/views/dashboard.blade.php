@@ -6,7 +6,7 @@
     <main class="container-fluid py-4 px-md-5">
         <div class="row g-4">
 
-            <aside class="col-12 col-xl-3">
+            <aside class="col-12 col-xl-3 order-2 order-xl-1">
                 <div class="diab-card p-4 mb-4 animate-fade-in">
                     <div class="tool-header mb-4 d-flex align-items-center text-diab-primary">
                         <span class="fw-bold">Gestión DiabTrack</span>

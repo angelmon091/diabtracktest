@@ -196,7 +196,7 @@
                         <span class="text-muted extra-small">kg</span>
                     </div>
                     <div class="mt-3 extra-small text-muted">
-                        <i class="fa-solid fa-scale-balanced me-1"></i> {{ $vitalsHistory->count() }} mediciones
+                        <i class="fa-solid fa-scale-balanced me-1"></i> {{ $weightCount }} mediciones
                     </div>
                 </div>
             </div>
@@ -356,7 +356,7 @@
                                         <th>Glucosa</th>
                                         <th>Presión</th>
                                         <th class="d-none d-md-table-cell">FC</th>
-                                        <!-- column removed -->
+                                        <th>Peso</th>
                                         <th>Estado</th>
                                     </tr>
                                 </thead>
@@ -366,19 +366,23 @@
                                         <td class="small fw-semibold">{{ $vital->created_at->format('d M, H:i') }}</td>
                                         <td>
                                             <span class="badge-glucose {{ $vital->glucose_level > 140 ? 'bg-danger-light text-danger' : ($vital->glucose_level < 70 ? 'bg-warning-light text-warning' : 'bg-success-light text-success') }}">
-                                                {{ $vital->glucose_level }}
+                                                {{ $vital->glucose_level ?? '--' }}
                                             </span>
                                         </td>
-                                        <td>{{ $vital->systolic }}/{{ $vital->diastolic }}</td>
-                                        <td class="d-none d-md-table-cell">{{ $vital->heart_rate }} <small class="text-muted">bpm</small></td>
-                                        <!-- column removed -->
+                                        <td>{{ $vital->systolic && $vital->diastolic ? $vital->systolic . '/' . $vital->diastolic : '--' }}</td>
+                                        <td class="d-none d-md-table-cell">{{ $vital->heart_rate ? $vital->heart_rate . ' bpm' : '--' }}</td>
+                                        <td class="fw-bold">{{ $vital->weight ? $vital->weight . ' kg' : '--' }}</td>
                                         <td>
-                                            @if($vital->glucose_level > 140)
-                                                <i class="fa-solid fa-circle-exclamation text-danger"></i>
-                                            @elseif($vital->glucose_level < 70)
-                                                <i class="fa-solid fa-droplet-slash text-warning"></i>
+                                            @if($vital->glucose_level)
+                                                @if($vital->glucose_level > 140)
+                                                    <i class="fa-solid fa-circle-exclamation text-danger"></i>
+                                                @elseif($vital->glucose_level < 70)
+                                                    <i class="fa-solid fa-droplet-slash text-warning"></i>
+                                                @else
+                                                    <i class="fa-solid fa-circle-check text-success"></i>
+                                                @endif
                                             @else
-                                                <i class="fa-solid fa-circle-check text-success"></i>
+                                                <span class="text-muted small">N/A</span>
                                             @endif
                                         </td>
                                     </tr>

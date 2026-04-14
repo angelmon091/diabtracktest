@@ -131,6 +131,7 @@ class DashboardController extends Controller
             'avgDiastolic' => round($vitalsHistory->avg('diastolic')),
             'avgHeartRate' => round($vitalsHistory->avg('heart_rate')),
             'totalWeight' => $user->patientProfile->weight ?? '--',
+            'weightCount' => $vitalsHistory->whereNotNull('weight')->count(),
             'symptomsCount' => $symptomsHistory->count(),
             'medicationCount' => $nutritionHistory->whereNotNull('medication_taken')->count(),
             'totalActivityMinutes' => $activityHistory->sum('duration_minutes'),

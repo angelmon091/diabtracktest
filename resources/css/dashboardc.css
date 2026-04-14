@@ -11,13 +11,30 @@
 }
 
 /* Updated Navbar for User Dashboard */
+.navbar-content {
+    flex-wrap: nowrap !important;
+    gap: 10px;
+}
+
+.nav-search {
+    flex-shrink: 1;
+    min-width: 150px;
+}
+
 .nav-search input {
     background: var(--diab-bg);
     border: 1px solid rgba(0, 0, 0, 0.05);
     padding: 10px 20px;
     border-radius: 50px;
-    width: 280px;
+    width: 100%;
+    max-width: 240px;
     transition: var(--diab-transition);
+}
+
+@media (min-width: 1200px) {
+    .nav-search input {
+        max-width: 320px;
+    }
 }
 
 .nav-search input:focus {
@@ -28,7 +45,14 @@
 
 .nav-menu {
     display: flex;
-    gap: 25px;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+@media (min-width: 1200px) {
+    .nav-menu {
+        gap: 25px;
+    }
 }
 
 .nav-item {
@@ -40,12 +64,21 @@
     font-size: 0.7rem;
     font-weight: 500;
     transition: var(--diab-transition);
-    padding: 5px 10px;
+    padding: 5px 8px;
+    white-space: nowrap;
 }
 
 .nav-item i {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 2px;
+}
+
+.user-section {
+    flex-shrink: 0;
+}
+
+.user-card {
+    transition: var(--diab-transition);
 }
 
 .nav-item:hover {
@@ -171,11 +204,11 @@
 
 @media (max-width: 768px) {
     body {
-        padding-bottom: 85px;
+        padding-bottom: 65px;
     }
 
     .site-footer {
-        padding-bottom: 110px !important;
+        padding-bottom: 90px !important;
     }
 
     .navbar {
@@ -190,7 +223,7 @@
         left: 0;
         width: 100%;
         background: white;
-        padding: 12px 0 25px 0;
+        padding: 8px 0 15px 0;
         z-index: 2000;
         justify-content: space-around;
         gap: 0;
@@ -206,8 +239,8 @@
     }
 
     .nav-item i {
-        font-size: 1.5rem;
-        margin-bottom: 4px;
+        font-size: 1.25rem;
+        margin-bottom: 2px;
         color: var(--diab-text-muted);
     }
 
@@ -222,7 +255,7 @@
     
     .nav-item.active i {
         color: var(--diab-primary);
-        transform: translateY(-3px);
+        transform: translateY(-2px);
     }
 
     .glucosa-hero {

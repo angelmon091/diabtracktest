@@ -14,7 +14,7 @@
 <body class="animate-fade-in">
     <div class="main-content-push">
         <div class="content-body">
-            <header class="navbar shadow-sm border-bottom glass-effect sticky-top py-2">
+            <header class="navbar shadow-sm border-bottom glass-effect sticky-md-top py-2">
                 <div class="navbar-content container-fluid px-md-5 d-flex justify-content-between align-items-center">
                     <a href="{{ route('dashboard') }}" class="diab-logo text-decoration-none">
                         D<span>ia</span>bTrack
@@ -45,7 +45,7 @@
                             <i class="fa-solid fa-bell notification fs-5"></i>
                         </a>
                         <div class="user-card border bg-white shadow-sm p-1 ps-3 rounded-pill d-flex align-items-center">
-                            <div class="user-text d-none d-sm-block me-2">
+                            <div class="user-text d-none d-xl-block me-2">
                                 <span class="user-name fw-bold small d-block">{{ auth()->user()->name }}</span>
                                 <span class="user-email text-muted extra-small" style="font-size: 0.7rem;">{{ auth()->user()->email }}</span>
                             </div>
