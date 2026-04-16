@@ -1,97 +1,88 @@
-# DiabTrack - Sistema de Gestión de Salud para Diabéticos
+# <p align="center">DiabTrack</p>
 
-DiabTrack es una aplicación web integral diseñada para ayudar a las personas con diabetes a llevar un control preciso y simplificado de su salud. Mediante el seguimiento de niveles de glucosa, nutrición con asistencia de IA y actividad física, la plataforma proporciona herramientas críticas para la toma de decisiones informadas sobre el bienestar personal.
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" />
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" />
+  <img src="https://img.shields.io/badge/Google_Auth-4285F4?style=for-the-badge&logo=google&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+</p>
 
----
-
-## Tecnologías Utilizadas
-
-El proyecto está construido sobre un stack moderno y escalable:
-
-*   **Backend:** [Laravel 11](https://laravel.com/) (PHP 8.2+) - Framework robusto para la lógica de negocio y APIs.
-*   **Frontend:** [Blade Templates](https://laravel.com/docs/blade) - Motor de plantillas dinámicas para la interfaz de usuario.
-*   **Estilos:** [Bootstrap 5.3](https://getbootstrap.com/) & **Vanilla CSS** - Diseño responsivo con un sistema de diseño (Design System) propio.
-*   **Gráficos:** [Chart.js](https://www.chartjs.org/) - Visualización interactiva de tendencias de glucosa y métricas.
-*   **Bundler:** [Vite](https://vitejs.dev/) - Gestión eficiente de activos (JS/CSS).
-*   **Base de Datos:** [MySQL](https://www.mysql.com/) - Almacenamiento relacional de perfiles, mediciones y registros nutricionales.
-*   **Autenticación:** [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze) - Implementación segura de registro, login y gestión de sesiones.
-
----
-
-## Funcionalidades Principales
-
-### 1. Panel de Control (Dashboard)
-Visualización centralizada de la salud del usuario:
-*   **Métrica de Glucosa en Tiempo Real:** Muestra la última medición con indicadores visuales de estado (Normal, Elevado, Bajo).
-*   **Gráfico de Tendencias:** Seguimiento semanal interactivo de los niveles de glucosa.
-*   **Estimación de A1c:** Cálculo proyectado del promedio de hemoglobina glicosilada.
-*   **Progreso Diario:** Barras dinámicas de cumplimiento de metas en Calorías, Actividad Física y Pasos.
-
-### 2. Gestión de Registros (Tracking)
-*   **Signos Vitales:** Registro manual de glucosa, presión arterial y peso.
-*   **Nutrición Asistida:** Seguimiento de ingesta calórica y carbohidratos.
-*   **Actividad Física:** Registro de minutos de ejercicio diarios.
-
-### 3. Sistema de Usuarios
-*   **Perfiles de Paciente:** Configuración de metas personalizadas (pasos, calorías, minutos de actividad).
-*   **Roles y Permisos:** Sistema preparado para administración y vista de paciente.
+<p align="center">
+  <strong>Transformando el control de la diabetes con tecnología inteligente.</strong><br />
+  <a href="https://diabtrack.app">🌐 Visitar Proyecto Live</a>
+</p>
 
 ---
 
-## Flujos del Sistema
+## 🌟 Sobre el Proyecto
 
-### Flujo de Usuario (Paciente)
-1.  **Registro/Onboarding:** El usuario crea una cuenta y completa su perfil médico con sus metas personalizadas.
-2.  **Registro Diario:** El usuario ingresa sus niveles de glucosa después de las comidas o en ayunas.
-3.  **Monitoreo:** El sistema actualiza automáticamente el Dashboard, alertando si los niveles están fuera de rango.
-4.  **Ajuste:** Basado en los gráficos y el "Tip del Día", el usuario ajusta su dieta o actividad.
+**DiabTrack** es una plataforma integral diseñada para ayudar a personas con diabetes a gestionar su salud de forma sencilla y analítica. Permite el seguimiento de niveles de glucosa, nutrición, actividad física y signos vitales, todo centralizado en un dashboard inteligente.
 
-### Flujo de Datos
-*   **Entrada:** Formulario de registro -> Validación (Requests) -> Almacenamiento (Models).
-*   **Procesamiento:** `DashboardMetricsService` calcula promedios, porcentajes de metas y tendencias semanales.
-*   **Salida:** Vistas Blade inyectan datos dinámicos en componentes de Chart.js y barras de progreso CSS.
+### 🚀 Características Principales
+*   **Autenticación Social:** Ingreso rápido y seguro con Google.
+*   **Análisis Predictivo:** Estimación de A1c y gráficos de tendencia.
+*   **Gestión de Nutrición:** Control calórico y de carbohidratos.
+*   **Sistema de Notificaciones:** Envíos transaccionales mediante **Resend**.
+*   **SEO Optimizado:** Indexación lista para buscadores en el dominio `diabtrack.app`.
 
 ---
 
-## Instalación y Configuración
+## 🛠️ Tecnologías y Herramientas
 
-1.  **Clonar el repositorio:**
-    ```bash
-    git clone https://github.com/tu-usuario/diabtrack.git
-    cd diabtrack
-    ```
-2.  **Instalar dependencias de PHP:**
-    ```bash
-    composer install
-    ```
-3.  **Instalar dependencias de Frontend:**
-    ```bash
-    npm install
-    ```
-4.  **Configurar el entorno:**
-    ```bash
-    cp .env.example .env
-    php artisan key:generate
-    ```
-5.  **Migrar y Sembrar la Base de Datos:**
-    ```bash
-    php artisan migrate --seed
-    ```
-6.  **Compilar activos y ejecutar:**
-    ```bash
-    npm run dev
-    # En otra terminal:
-    php artisan serve
-    ```
+| Categoría | Tecnologías |
+| :--- | :--- |
+| **Backend** | PHP 8.3+, Laravel 13, Socialite |
+| **Frontend** | Blade, Bootstrap 5.3, Vanilla CSS (Design System) |
+| **Base de Datos** | MySQL 8.0 |
+| **Infraestructura** | Docker, Docker Compose |
+| **Email Service** | Resend API |
+| **Bundler** | Vite |
 
 ---
 
-## Estructura del Proyecto
+## 🐳 Instalación con Docker (Producción & Dev)
 
-*   `app/Http/Controllers/Tracking`: Controladores para el registro de datos.
-*   `app/Services`: Lógica de cálculo de métricas (DashboardMetricsService).
-*   `resources/css/design-system.css`: Estándares visuales unificados.
-*   `resources/views/layouts/app.blade.php`: Layout base con menú responsivo inteligente.
+Este proyecto está completamente dockerizado para facilitar su despliegue en cualquier entorno.
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/tu-usuario/diabtrack.git
+cd diabtrack
+```
+
+### 2. Configurar Entorno
+```bash
+cp .env.example .env
+```
+*Edita el `.env` con tus credenciales de Google Auth y Resend API Key.*
+
+### 3. Levantar Contenedores
+```bash
+docker-compose up -d
+```
+
+### 4. Inicializar Aplicación
+```bash
+docker-compose exec app php artisan setup-project
+# O manualmente:
+docker-compose exec app composer install
+docker-compose exec app php artisan key:generate
+docker-compose exec app php artisan migrate --seed
+```
 
 ---
-© 2026 DiabTrack App. Cuidando tu salud.
+
+## 📈 SEO y Dominio
+La aplicación está configurada para el dominio oficial: **[diabtrack.app](https://diabtrack.app)**.
+Incluye:
+*   `sitemap.xml` dinámico para Google.
+*   `robots.txt` optimizado.
+*   Meta etiquetas Open Graph para redes sociales.
+
+---
+<p align="center">
+  © 2026 DiabTrack App. Cuidando tu salud, paso a paso.
+</p>

@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /dashboard
-Disallow: /profile
 Disallow: /admin
-Disallow: /onboarding
-Disallow: /tracking
+Disallow: /dashboard
 
-Sitemap: /sitemap.xml
+Sitemap: https://diabtrack.app/sitemap.xml
