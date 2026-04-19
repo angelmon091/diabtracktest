@@ -1,6 +1,7 @@
 .git
 node_modules
 vendor
+bootstrap/cache/*.php
 public/build
 public/storage
 storage/*.key
